@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+    env_file: .env
+    links:
+      - "postgres:db"
+  db:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: osqledaren
+      POSTGRES_USER: ol_user
+      POSTGRES_DB: ol_quiz
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  ol_quiz_db:

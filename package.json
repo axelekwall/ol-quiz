@@ -4,8 +4,8 @@
   "description": "OL Quiz web app",
   "main": "src/server",
   "engines": {
-    "node": "6.2.2",
-    "npm": "3.7.3"
+    "node": "8.6.0",
+    "npm": "5.3.0"
   },
   "scripts": {
     "test": "test",
