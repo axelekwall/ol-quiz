@@ -1,6 +1,3 @@
 node_modules
-client
 .gitignore
-.env
 README.md
-.idea
