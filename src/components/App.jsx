@@ -18,7 +18,3 @@ export default function App({children}) {
     </div>
   );
 }
-
-App.propTypes = {
-  children: React.PropTypes.object,
-};

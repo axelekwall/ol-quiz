@@ -9,12 +9,14 @@ const networkInterface = createBatchingNetworkInterface({
 // Sample error handling middleware
 networkInterface.useAfter([
   {
-    applyAfterware({response}, next) {
+    applyBatchAfterware({response}, next) {
       if (response.errors) {
         if (typeof window !== 'undefined') {
           log.error(JSON.stringify(response.errors));
           alert(
-            `There was an error in your GraphQL request: ${response.errors[0].message}`);
+            `There was an error in your GraphQL request: 
+            ${response.errors[0].message}`
+          );
         }
       }
       next();

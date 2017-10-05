@@ -22,11 +22,6 @@ function LocalCounter({count, onAddCount}) {
   );
 }
 
-LocalCounter.propTypes = {
-  count: React.PropTypes.number.isRequired,
-  onAddCount: React.PropTypes.func.isRequired,
-};
-
 const mapStateToProps = ({count}) => ({
   count,
 });

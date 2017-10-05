@@ -39,10 +39,6 @@ function RemoteCounter({data, addCount, induceError}) {
   );
 }
 
-RemoteCounter.propTypes = {
-  data: React.PropTypes.object.isRequired,
-};
-
 const CurrentCount = gql`
   query CurrentCount {
     count {
