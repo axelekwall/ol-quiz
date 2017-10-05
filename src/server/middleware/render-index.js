@@ -38,5 +38,5 @@ export default function renderIndex(html, css, assetMap, store) {
     <script src="/assets/${assetMap['bundle.js']}"></script>
   </body>
 </html>
-`
+`;
 }

@@ -1,56 +1,57 @@
-import minilog from 'minilog'
-import rollbar from 'rollbar'
+import minilog from 'minilog';
+import rollbar from 'rollbar';
 
 function isClient() {
-  return typeof window !== 'undefined'
+  return typeof window !== 'undefined';
 }
 
-let logInstance = null
+let logInstance = null;
 
 if (isClient()) {
-  minilog.enable()
-  logInstance = minilog('client')
-  const existingErrorLogger = logInstance.error
+  minilog.enable();
+  logInstance = minilog('client');
+  const existingErrorLogger = logInstance.error;
   logInstance.error = (err) => {
-    window.Rollbar.error(err)
-    existingErrorLogger(err)
-  }
+    window.Rollbar.error(err);
+    existingErrorLogger(err);
+  };
 } else {
-  let enableRollbar = false
+  let enableRollbar = false;
   if (process.env.NODE_ENV === 'production') {
-    enableRollbar = true
-    rollbar.init(process.env.ROLLBAR_ACCESS_TOKEN)
+    enableRollbar = true;
+    rollbar.init(process.env.ROLLBAR_ACCESS_TOKEN);
     const options = {
-      exitOnUncaughtException: false
-    }
-    rollbar.handleUncaughtExceptions(process.env.ROLLBAR_ACCESS_TOKEN, options)
+      exitOnUncaughtException: false,
+    };
+    rollbar.handleUncaughtExceptions(process.env.ROLLBAR_ACCESS_TOKEN, options);
   }
 
-  minilog.suggest.deny(/.*/, process.env.NODE_ENV === 'development' ? 'debug' : 'debug')
+  minilog.suggest.deny(/.*/,
+    process.env.NODE_ENV === 'development' ? 'debug' : 'debug');
 
-  minilog.enable()
-    .pipe(minilog.backends.console.formatWithStack)
-    .pipe(minilog.backends.console)
+  minilog.enable().
+    pipe(minilog.backends.console.formatWithStack).
+    pipe(minilog.backends.console);
 
-  logInstance = minilog('backend')
-  const existingErrorLogger = logInstance.error
+  logInstance = minilog('backend');
+  const existingErrorLogger = logInstance.error;
   logInstance.error = (err) => {
-    existingErrorLogger(err.stack ? err.stack : err)
+    existingErrorLogger(err.stack ? err.stack : err);
     try {
       if (enableRollbar) {
         if (typeof err === 'object') {
-          rollbar.handleError(err)
+          rollbar.handleError(err);
         } else if (typeof err === 'string') {
-          rollbar.reportMessage(err)
+          rollbar.reportMessage(err);
         } else {
-          rollbar.reportMessage('Got backend error with no error message')
+          rollbar.reportMessage('Got backend error with no error message');
         }
       }
     } catch (ex) {
-      rollbar.reportMessage('Error converting message to rollbar.')
+      rollbar.reportMessage('Error converting message to rollbar.');
     }
-  }
+  };
 }
 
-const log = logInstance
-export default log
+const log = logInstance;
+export default log;

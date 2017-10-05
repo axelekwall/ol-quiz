@@ -3,11 +3,11 @@ export const schema = `
     id: String
     amount: Int
   }
-`
+`;
 
 export const resolvers = {
   Count: {
     id: () => 'count_identifier',
-    amount: (count) => count
-  }
-}
+    amount: (count) => count,
+  },
+};

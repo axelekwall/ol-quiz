@@ -1,31 +1,32 @@
-import React from 'react'
-import gql from 'graphql-tag'
-import { graphql, compose } from 'react-apollo'
-import { Link } from 'react-router'
+import React from 'react';
+import gql from 'graphql-tag';
+import {compose, graphql} from 'react-apollo';
+import {Link} from 'react-router';
 
-function RemoteCounter({ data, addCount, induceError }) {
+function RemoteCounter({data, addCount, induceError}) {
   if (data.loading) {
     return (
       <div>
         Loading...
       </div>
-    )
+    );
   }
   return (
     <div>
       <div>
-        Current count is {data.count.amount}. This is being stored server-side in the database and using Apollo to update.
+        Current count is {data.count.amount}. This is being stored server-side
+        in the database and using Apollo to update.
       </div>
       <button
         onClick={async () => {
-          await addCount(1)
+          await addCount(1);
         }}
       >
         Click to increase count
       </button>
-      <br />
+      <br/>
       <button onClick={async () => {
-        await induceError()
+        await induceError();
       }}>
         Click to induce a GraphQL error
       </button>
@@ -35,12 +36,12 @@ function RemoteCounter({ data, addCount, induceError }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 RemoteCounter.propTypes = {
-  data: React.PropTypes.object.isRequired
-}
+  data: React.PropTypes.object.isRequired,
+};
 
 const CurrentCount = gql`
   query CurrentCount {
@@ -49,7 +50,7 @@ const CurrentCount = gql`
       amount
     }
   }
-`
+`;
 
 const AddCount = gql`
   mutation AddCount($amount: Int!) {
@@ -58,24 +59,24 @@ const AddCount = gql`
       amount
     }
   }
-`
+`;
 
 const InduceError = gql`
   mutation InduceError {
     induceError
   }
-`
+`;
 
 export default compose(
   graphql(CurrentCount),
   graphql(AddCount, {
-    props: ({ mutate }) => ({
-      addCount: (amount) => mutate({ variables: { amount } })
-    })
+    props: ({mutate}) => ({
+      addCount: (amount) => mutate({variables: {amount}}),
+    }),
   }),
   graphql(InduceError, {
-    props: ({ mutate }) => ({
-      induceError: () => mutate()
-    })
-  })
-)(RemoteCounter)
+    props: ({mutate}) => ({
+      induceError: () => mutate(),
+    }),
+  }),
+)(RemoteCounter);
