@@ -6,7 +6,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Install app dependencies
-COPY package.json package-lock.json /app
+COPY package.json package-lock.json /app/
 RUN npm install
 
 # Bundle app source
