@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "npm run server",
-    "server": "node server.js",
+    "server": "node ./server/index.js",
     "client": "node start-client.js"
   },
   "repository": {
