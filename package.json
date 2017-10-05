@@ -1,10 +1,11 @@
 {
-  "name": "ol-quiz",
+  "name": "ol-quiz-api",
   "version": "1.0.0",
-  "description": "Osqledaren Quiz App",
-  "main": "index.js",
+  "description": "Osqledaren Quiz Api",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run server",
+    "server": "node server.js",
+    "client": "node start-client.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/axelekwall/ol-quiz/issues"
   },
-  "homepage": "https://github.com/axelekwall/ol-quiz#readme"
+  "homepage": "https://github.com/axelekwall/ol-quiz#readme",
+  "dependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1"
+  }
 }
