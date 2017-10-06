@@ -10,7 +10,9 @@
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node ./server/index.js",
     "client": "node start-client.js",
-    "docker": "docker-compose up"
+    "docker": "docker-compose up",
+    "build-client": "node build-client.js",
+    "heroku-postbuild": "npm run build-client"
   },
   "repository": {
     "type": "git",
