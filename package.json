@@ -1,29 +1,19 @@
 {
-  "name": "ol-quiz-api",
-  "version": "1.0.0",
-  "description": "Osqledaren Quiz Api",
-  "engines": {
-    "node": "8.6.0",
-    "npm": "5.3.0"
-  },
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server.js",
-    "client": "node start-client.js",
-    "docker": "docker-compose up",
-    "build-client": "node build-client.js",
-    "heroku-postbuild": "npm run build-client"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/axelekwall/ol-quiz.git"
-  },
+  "name": "ol-quiz",
+  "description": "Osqledaren Quiz App",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:3001/",
   "author": "OL Dev Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/axelekwall/ol-quiz/issues"
   },
   "homepage": "https://github.com/axelekwall/ol-quiz#readme",
+  "engines": {
+    "node": "8.6.0",
+    "npm": "5.3.0"
+  },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
@@ -40,5 +30,19 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.4.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server.js",
+    "client": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "docker": "docker-compose up",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelekwall/ol-quiz.git"
   }
 }
