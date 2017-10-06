@@ -13,8 +13,7 @@
     "quote-props": [1, "consistent-as-needed"],
     "react/no-multi-comp": 0,
     "react/prop-types": 0,
-    "react/no-array-index-key": 0,
-    "space-before-function-paren": [2, {"anonymous": "always", "named": "never"}]
+    "react/no-array-index-key": 0
     // Additional, per-project rules...
   }
 }
