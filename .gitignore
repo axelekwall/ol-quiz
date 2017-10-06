@@ -17,14 +17,7 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-/build
-npm-debug.log
-
-# Created by https://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudio,jetbrains+all,visualstudiocode
+# Created by htps://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudio,jetbrains+all,visualstudiocode
 
 ### JetBrains+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
