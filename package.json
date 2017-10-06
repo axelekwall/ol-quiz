@@ -9,7 +9,6 @@
   "bugs": {
     "url": "https://github.com/axelekwall/ol-quiz/issues"
   },
-  "homepage": "https://github.com/axelekwall/ol-quiz#readme",
   "engines": {
     "node": "8.6.0",
     "npm": "5.3.0"
