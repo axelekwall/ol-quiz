@@ -10,7 +10,7 @@ app.get('/api', (req, res) => {
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(__dirname + '/build'));
+  app.use(express.static('/build'));
 }
 
 app.listen(app.get('port'), () => {
