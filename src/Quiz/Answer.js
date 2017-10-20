@@ -7,21 +7,24 @@ class Answer extends Component {
   render() {
   	return(
   		
-  			<div class="answer-content">
-  				<div class="left-answer-column">
-  					<h1>RÄTT</h1>
-  					<h3>25% <br/> svarade rätt på den här frågan.</h3>
-				</div>
-				<div class="right-answer-column">
-  					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-  						Nulla lacinia posuere sem eu viverra. 
-  						Quisque posuere nec massa ultricies auctor. 
-  						Praesent pellentesque metus risus, in congue massa tristique pulvinar. 
-  						Integer finibus lacus quis leo efficitur fringilla et sed augue. 
-  						Fusce dictum hendrerit arcu, ac posuere ex vestibulum in. 
-  						Praesent luctus quis arcu id feugiat. Phasellus posuere eros ac diam faucibus gravida. </p>
-  					<button type="button" class="next-question-button">NÄSTA</button>
-				</div>
+  			<div className="answer-content">
+  				
+  					<div className="answer-text">
+  						<h1>RÄTT</h1>
+					</div>
+					<div className="answer-statistics">
+  						<h3>25%</h3> 
+					</div>
+					<div className="answer-statistics-text">
+  						<h4>svarade rätt på den här frågan.</h4>
+					</div>
+					<div className="answer-info">
+  						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+					</div>
+  					<div className="next-button-div">
+  						<button type="button" className="next-question-button">Nästa</button>
+						</div>
+			
 			</div>
   		
   	)

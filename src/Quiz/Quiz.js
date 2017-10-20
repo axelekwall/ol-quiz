@@ -31,7 +31,7 @@ class Quiz extends Component {
   			<Progress progressCount={this.state.questionNumber}/>
   			<Question actionME={this.increaseQuestion} questions={this.state.questions} questionNumber={this.state.questionNumber}/>
   			<Answer/>
-  			<Controls/>
+  			
 		</div>
   	)
   }

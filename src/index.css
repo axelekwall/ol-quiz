@@ -26,6 +26,9 @@ p{
 	font-family: "Chaparral Pro Regular";
 }
 
+.App-header{
+	height: 50px;
+}
 /* KOLLA ÖVER BREDD*/
 .quiz-container{
 	margin:auto;
@@ -33,27 +36,29 @@ p{
 }
 
 .footer{
-	position:absolute;
+	position:static;
 	bottom:0;
 	right:0;
 	left:0;
 	margin-bottom:1em;
+	text-align: center;
+
 }
 
 .footer h3{
 	font-family: "Museo Slab 900";
 	color:white;
 	font-size:2em;
-	padding:0px;
-	margin:0px;
+	padding:0;
+	margin:0;
 }
 
 .footer p{
 	font-family: "Proxima Nova";
 	color: rgba(255, 255, 255, 0.7);
 	font-size:0.7em;
-	padding:0px;
-	margin:0px;
+	padding:0;
+	margin:0;
 }
 
 
@@ -62,31 +67,33 @@ p{
 
 .answer-content{
 	background-color: rgb(51,51,51);
-  	padding: 20px 50px 20px 50px;
-
   	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-gap: 10px;
-	grid-auto-rows: minmax(200px, auto);
+	grid-auto-rows: minmax(10px);
+	grid-template-areas: 
+      	"answerText answerInfo"
+      	"answerStatistics answerInfo"
+      	"answerStatisticsText answerInfo"
+      	". nextQuestionButton";
+
+}
+.answer-content p{
+	font-size: 22px;
 }
 
-.left-answer-column{
-	grid-column: 1;
-	grid-row: 1;
-	text-align: left;
+.answer-content h1{
+	margin:0;
+	font-size: 120px;
 }
 
-.right-answer-column{
-	grid-column: 2;
-	grid-row: 1;
+.answer-content h3{
+	font-size: 30px;
+	margin:0;
 }
 
-.right-answer-column p{
-	text-align: left;
-}
-.right-answer-column button{
-	float: right;
-	margin-top: 50px;
+.answer-content h4{
+	margin:0;
+	font-family: "Chaparral Pro Regular";
 }
 
 .next-question-button{
@@ -97,5 +104,80 @@ p{
 	font-size: 22px;
 	border: none;
 	border-radius: 5px;
+	font-family: "Chaparral Pro Regular";
 }
+
+.next-button-div{
+	grid-area: nextQuestionButton;
+	text-align: right;
+	margin-top: 20px;
+}
+.answer-text{
+	grid-area: answerText;
+}
+.answer-statistics{
+	grid-area: answerStatistics;
+}
+.answer-statistics-text{
+	grid-area: answerStatisticsText;
+}
+.answer-info{
+	grid-area: answerInfo;
+}
+
+@media (max-width: 500px) {
+	.answer-content p{
+		font-size: 18px;
+	}
+	.answer-content h1{
+		font-size: 56px;
+	}	
+	.answer-content h3{
+		font-size: 40px;
+		font-weight: 500;
+	}
+
+	.answer-content h4{
+		font-size: 20px;
+		font-weight: 500;
+	}
+
+	.answer-content{
+		display: grid;
+		margin-left:20px;
+		padding: 10px;
+        grid-template-columns: 2fr;
+    	grid-template-areas: 
+      	"answerText answerText"
+      	"answerInfo answerInfo"
+      	"answerStatistics answerStatisticsText"
+      	". nextQuestionButton";
+	}
+
+	.answer-statistics{
+		margin-right: 20px;
+		margin-top: 25px;
+	}
+
+	.answer-statistics-text{
+		margin-right: 25px;
+		margin-top: 25px;
+	}
+
+	.next-button-div{
+		margin-right: 25px;
+		margin-top: 60px;
+	}
+
+	.next-question-button{
+		height: 40px;
+		width: 120px;
+		font-size: 20px;
+	}
+
+}
+
+
+
+
 /*END OF ANSWER SECTION*/
