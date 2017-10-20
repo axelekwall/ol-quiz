@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Progress from "./Progress.js";
 import Question from "./Question.js";
-import Visualization from "./Visualization.js";
+import Answer from "./Answer.js";
 import Controls from "./Controls.js";
 
 class Quiz extends Component {
@@ -30,7 +30,7 @@ class Quiz extends Component {
   		<div>
   			<Progress progressCount={this.state.questionNumber}/>
   			<Question actionME={this.increaseQuestion} questions={this.state.questions} questionNumber={this.state.questionNumber}/>
-  			<Visualization/>
+  			<Answer/>
   			<Controls/>
 		</div>
   	)
