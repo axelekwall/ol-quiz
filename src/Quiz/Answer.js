@@ -22,11 +22,10 @@ class Answer extends Component {
   						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 					</div>
   					<div className="next-button-div">
-  						<button type="button" className="next-question-button">Nästa</button>
+  						
+  							<button type="button" className="next-question-button" onClick={this.props.actionME}>Nästa</button>
 						</div>
-			
 			</div>
-  		
   	)
   }
 }
