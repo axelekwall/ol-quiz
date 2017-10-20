@@ -224,4 +224,8 @@ p{
 		grid-column: 1;
 		grid-row: 4;
 	}
+
+	.answer-options3 button, .answer-options4 button{
+		min-height:4rem;
+	}
 }

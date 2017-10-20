@@ -37,8 +37,10 @@ class Quiz extends Component {
   render() {
   	return(
   		<div>
+        <Progress progressCount={this.state.questionNumber}/>
   			<Question actionME={this.increaseQuestion} question={this.state.questions[this.state.questionNumber]} />
-		  </div>
+		    <Answer/>
+      </div>
   	)
   }
 }
