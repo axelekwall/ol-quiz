@@ -7,10 +7,12 @@ class Question extends Component {
 
   render() {
   	return(
-  		<div style={{display:'none'}}>
-        <p>{this.props.questions[this.props.questionNumber]}</p>
-	  		<button value="nej" onClick={this.props.actionME}>NEJ</button> 
-        <button value="ja" onClick={this.props.actionME}>JA</button>
+        <div className="display-question"><h2>{this.props.question.text}</h2></div>
+	  		<div className={"answer-options"+this.props.question.answer.length}>
+	  			{this.props.question.answer.map((answer, index) => (
+	  				<button id={"ans" + index} value={index} onClick={this.props.actionME}>{answer}</button>
+	  				))}
+  			</div>
   		</div>
   	)
   }
