@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
   var Answer = sequelize.define('Answer',
     {
-      qId: DataTypes.INT,
       correct: DataTypes.BOOLEAN,
       ans: DataTypes.STRING,
     },
