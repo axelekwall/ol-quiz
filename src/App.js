@@ -7,9 +7,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">OL QUIZ</h1>
         </header>
+        
+        <div className="quiz-container">
         <Quiz/>
+        </div>
+
+        <div className="footer">
+          <h3>OL</h3>
+          <p>Producerad med kärlek på KTH</p>
+        </div>
       </div>
     );
   }

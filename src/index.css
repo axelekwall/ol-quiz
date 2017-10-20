@@ -3,7 +3,59 @@ body {
   padding: 0;
   font-family: sans-serif;
   color: white;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgb(51, 51, 51);
 }
+@font-face {
+    font-family: "Museo Slab 900";
+    src: url(./Assets/Fonts/Museo_Slab_900.otf);
+}
+
+@font-face{
+	font-family: "Chaparral Pro Regular";
+	src: url(./Assets/Fonts/ChaparralPro-Regular.otf);
+}
+
+h1, h2, h3 {
+	font-family: "Museo Slab 900";
+}
+
+p{
+	font-family: "Chaparral Pro Regular";
+}
+
+/* KOLLA ÖVER BREDD*/
+.quiz-container{
+	margin:auto;
+	max-width:1000px;
+}
+
+.footer{
+	position:absolute;
+	bottom:0;
+	right:0;
+	left:0;
+	margin-bottom:1em;
+}
+
+.footer h3{
+	font-family: "Museo Slab 900";
+	color:white;
+	font-size:2em;
+	padding:0px;
+	margin:0px;
+}
+
+.footer p{
+	font-family: "Proxima Nova";
+	color: rgba(255, 255, 255, 0.7);
+	font-size:0.7em;
+	padding:0px;
+	margin:0px;
+}
+
 
 
 /*ANSWER SECTION */
@@ -46,6 +98,4 @@ body {
 	border: none;
 	border-radius: 5px;
 }
-
-
 /*END OF ANSWER SECTION*/
