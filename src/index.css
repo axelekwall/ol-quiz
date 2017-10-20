@@ -22,6 +22,10 @@ h1, h2, h3 {
 	font-family: "Museo Slab 900";
 }
 
+h2{
+	font-size:1.7rem;
+}
+
 p{
 	font-family: "Chaparral Pro Regular";
 }
@@ -33,17 +37,15 @@ p{
 }
 
 .footer{
-	position:absolute;
-	bottom:0;
 	right:0;
 	left:0;
-	margin-bottom:1em;
+	margin-bottom:1rem;
+	margin-top:15%;
 }
-
 .footer h3{
 	font-family: "Museo Slab 900";
 	color:white;
-	font-size:2em;
+	font-size:2rem;
 	padding:0px;
 	margin:0px;
 }
@@ -51,7 +53,7 @@ p{
 .footer p{
 	font-family: "Proxima Nova";
 	color: rgba(255, 255, 255, 0.7);
-	font-size:0.7em;
+	font-size:0.7rem;
 	padding:0px;
 	margin:0px;
 }
@@ -99,3 +101,127 @@ p{
 	border-radius: 5px;
 }
 /*END OF ANSWER SECTION*/
+
+/*QUIZ QUESTION AND OPTIONS */
+
+.answer-options3{
+	display: grid;
+	grid-template-columns: repeat(3);
+	grid-gap: 25px;
+	grid-auto-rows: minmax(100px, auto);
+	grid-auto-columns: minmax(200px, auto);
+}
+
+.answer-options3 #ans0{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.answer-options3 #ans1{
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.answer-options3 #ans2{
+	grid-column: 3;
+	grid-row: 1;
+}
+
+.answer-options4{
+	display: grid;
+	grid-template-columns: repeat(3);
+	grid-gap: 20px;
+	grid-auto-rows: minmax(100px, auto);
+	grid-auto-columns: minmax(200px, auto);
+}
+
+.answer-options4 #ans0{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.answer-options4 #ans1{
+	grid-column: 2;
+	grid-row: 1;
+}
+
+.answer-options4 #ans2{
+	grid-column: 3;
+	grid-row: 1;
+}
+
+.answer-options4 #ans3{
+	grid-column: 4;
+	grid-row: 1;
+}
+
+.answer-options3 button, .answer-options4 button{
+	min-height:8rem;
+	background-color: rgb(238, 81, 46);
+	border:none;
+	text-align: center;
+	color:white;
+	font-family: "Chaparral Pro Regular";
+	font-size:1rem;
+	width:100%;
+	border-radius:5px;
+}
+
+@media (max-width: 500px){
+	.display-question{
+		margin: 2rem;
+	}
+
+	.answer-options3{
+		display: grid;
+		grid-template-columns: repeat(1);
+		grid-template-rows:3;
+		grid-auto-rows: minmax(100px, auto);
+		margin-left:2rem;
+		margin-right:2rem;
+	}
+
+	.answer-options3 #ans0{
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.answer-options3 #ans1{
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.answer-options3 #ans2{
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.answer-options4{
+		display: grid;
+		grid-template-columns: repeat(1);
+		grid-template-rows:3;
+		grid-auto-rows: minmax(100px, auto);
+		margin-left:2rem;
+		margin-right:2rem;
+	}
+
+	.answer-options4 #ans0{
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.answer-options4 #ans1{
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.answer-options4 #ans2{
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.answer-options4 #ans3{
+		grid-column: 1;
+		grid-row: 4;
+	}
+}
