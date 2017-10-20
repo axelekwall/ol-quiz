@@ -16,6 +16,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.vscode
 
 # Created by htps://www.gitignore.io/api/node,linux,macos,windows,sublimetext,visualstudio,jetbrains+all,visualstudiocode
 
