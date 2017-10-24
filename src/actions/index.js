@@ -42,8 +42,12 @@ export function nextQuestion() {
     return { type: NEXT_QUESTION };
 }
 
-export function startQuiz(id) {
-    return { type: START_QUIZ, id };
+export function startQuiz() {
+    return { type: START_QUIZ };
+}
+
+export function correctAnswer() {
+    return { type: CORRECT_ANSWER};
 }
 
 export function finishQuiz(){

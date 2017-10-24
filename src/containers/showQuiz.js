@@ -8,7 +8,8 @@ const mapStateToProps = state => {
     currentView: state.currentView,
     question: state.questions,
     selectedAnswer: state.selectedAnswer,
-    correctAnswer: state.correctAnswer
+    correctAnswer: state.correctAnswer,
+    currentQuestion: state.currentQuestion
   }
 }
 
@@ -19,6 +20,15 @@ const mapDispatchToProps = (dispatch) => {
     },
     onClickNext: () => {
         dispatch(nextQuestion());
+    },
+    onCorrectAnswer: () => {
+        dispatch(correctAnswer());
+    },
+    onClickStart: () => {
+        dispatch(startQuiz());
+    },
+    onFinishQuiz: () => {
+        dispatch(finishQuiz());
     }
   }
 }
