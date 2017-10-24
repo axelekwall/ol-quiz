@@ -4,13 +4,28 @@ import React, {Component} from 'react';
 class Answer extends Component {
   
 
+
   render() {
+
+    var result;
+
+    if(this.props.selectedAnswer == this.props.question.correctIndex){
+      result = "Rätt"
+      // ACTION - Set correct answer - dispatch
+      this.props.onCorrectAnswer;
+    }
+    else{
+      result = "Fel"
+    }
+
   	return(
+
+
   		
   			<div className="answer-content">
   				
   					<div className="answer-text">
-  						<h1>RÄTT</h1>
+  						<h1>{result}</h1>
 					</div>
 					<div className="answer-statistics">
   						<h3>25%</h3> 
@@ -23,7 +38,7 @@ class Answer extends Component {
 					</div>
   					<div className="next-button-div">
   						
-  							<button type="button" className="next-question-button" onClick={this.props.actionME}>Nästa</button>
+  							<button type="button" className="next-question-button" onClick={this.props.nextQuestion}>Nästa</button>
 						</div>
 			</div>
   	)

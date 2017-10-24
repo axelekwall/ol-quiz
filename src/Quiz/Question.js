@@ -13,7 +13,7 @@ class Question extends Component {
     		</div>
 	  		<div className={"answer-options"+this.props.question.answer.length}>
 	  			{this.props.question.answer.map((answer, index) => (
-				<button id={"ans" + index} value={index} onClick={this.props.actionME}>{answer}</button>
+				<button id={"ans" + index} value={index} onClick={(e,index) => {e.preventDefault(); this.props.onClickAnswer(index)}}>{answer}</button>
 	  				))}
 			</div>
 		</div>
