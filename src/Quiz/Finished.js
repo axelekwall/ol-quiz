@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
 
 
-class Finished extends Component {
-  
-
-  render() {
-  	return(
-      <div>
-        <h1>Great job!</h1>
-      </div>
-    )
-  }
-}
+const Finished = ({correctAnswers, numberOfQuestions}) => (
+  <div>
+    <h1>Great job!</h1>
+    <h2>{correctAnswers}/{numberOfQuestions} correct answers!</h2>
+  </div>
+)
 
 export default Finished;

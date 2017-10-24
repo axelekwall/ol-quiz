@@ -14,6 +14,7 @@ export const FETCH_QUIZ_REQUEST = 'FETCH_QUIZ_REQUEST'; // call api to fetch a q
 export const FETCH_QUIZ_SUCCESS = 'FETCH_QUIZ_SUCCESS'; // api callback on success
 export const FETCH_QUIZ_ERROR = 'FETCH_QUIZ_ERROR'; // api callback on error
 export const CORRECT_ANSWER = 'CORRECT_ANSWER';
+export const INCORRECT_ANSWER = 'CORRECT_ANSWER';
 
 /*
  * other constants
@@ -34,8 +35,9 @@ export const UI = {
 export function setView(view){
     return {type: SET_UI_VIEW, view};
 }
-export function answerQuestion(answer) {
-    return { type: ANSWER_QUESTION, answer };
+export function answerQuestion(answer,correct) {
+    console.log("fel")
+    return { type: INCORRECT_ANSWER, answer };
 }
 
 export function nextQuestion() {
@@ -44,10 +46,6 @@ export function nextQuestion() {
 
 export function startQuiz() {
     return { type: START_QUIZ };
-}
-
-export function correctAnswer() {
-    return { type: CORRECT_ANSWER};
 }
 
 export function finishQuiz(){

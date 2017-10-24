@@ -20,9 +20,8 @@ class Progress extends Component {
 
   render() {
   	return(	
-  		<div className="prog-bar" style={{display:'none'}}>
-             <p  style={{display:'none'}} >My progress is {this.props.progressCount}</p>
-             <div className="prog-bar-fill" width={this.props.progressCount} style={{display:'none'}}></div>
+  		<div className="prog-bar">
+        <progress value={this.props.progressCount} max={this.props.progressLength}></progress>
   		</div>
 
   	);

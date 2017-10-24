@@ -6,8 +6,6 @@ import './index.css';
 import App from './App';
 import store from './store';
 
-store.dispatch({type:"ANSWER"});
-store.dispatch({type:"ANSWER"});
 
 render(
     <Provider store={store}>
