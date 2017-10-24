@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 /*
  * action types
  */
@@ -11,17 +13,18 @@ export const NEXT_QUESTION = 'NEXT_QUESTION';
 export const FETCH_QUIZ_REQUEST = 'FETCH_QUIZ_REQUEST'; // call api to fetch a quiz
 export const FETCH_QUIZ_SUCCESS = 'FETCH_QUIZ_SUCCESS'; // api callback on success
 export const FETCH_QUIZ_ERROR = 'FETCH_QUIZ_ERROR'; // api callback on error
+export const CORRECT_ANSWER = 'CORRECT_ANSWER';
 
 /*
  * other constants
  */
 
-export const UIViews = {
-    FRONT: 'UI_FRONT',
-    SUMMARY: 'UI_SUMMARY',
-    SHOW_QUESTION: 'UI_SHOW_QUESTION',
-    SHOW_ANSWER: 'UI_SHOW_ANSWER',
-    SHOW_PROGRESS: 'UI_SHOW_PROGRESS'
+export const UI = {
+    FRONT: 'UI_SHOW_FRONT',
+    SUMMARY: 'UI_SHOW_SUMMARY',
+    QUESTION: 'UI_SHOW_QUESTION',
+    ANSWER: 'UI_SHOW_ANSWER',
+    //PROGRESS: 'UI_SHOW_PROGRESS'
 };
 
 /*
@@ -47,13 +50,24 @@ export function finishQuiz(){
     return {type: FINISH_QUIZ };
 }
 
-export function fetchQuiz(id){
-    return {type: FETCH_QUIZ_REQUEST, id};
+function requestQuiz() {
+    return { type: FETCH_QUIZ_REQUEST };
 }
 
-export function receiveQuiz(json){
+function receiveQuiz(json){
     return {
         type: FETCH_QUIZ_SUCCESS,
         quiz: json.data.children.map(child => child.data) // ändra
     };
 }
+
+export function fetchQuiz(id) {
+    return dispatch => {
+      dispatch(requestQuiz());
+
+      return fetch('/api/quiz/${id}')
+        .then(response => response.json())
+        .then(json => dispatch(receiveQuiz(json)))
+    }
+  }
+

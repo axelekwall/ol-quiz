@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Quiz from "./Quiz/Quiz.js";
+import showQuiz from "./containers/showQuiz.js";
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
         </header>
         
         <div className="quiz-container">
-        <Quiz/>
+          <Quiz/>
         </div>
 
         <div className="footer">

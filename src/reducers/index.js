@@ -1,67 +1,101 @@
 import { combineReducers, createStore } from "redux";
 import './actions';
 
-const questionReducer = (state, action) => {
-    switch(action.type) {
-        case ANSWER_QUESTION: {
-            // change ui, change selectedanswer
-            // progress bar?
-            if(action.answer == true){
-                return state = { ...state, answer: "correct"};
-            }
-        }
-        case NEXT_QUESTION: {
-            // next question
-            // change ui: UI_SHOW_QUESTION
-            // change current question: currentQuestion + 1 (index of questions array)
-            let q = state.currentQuestion + 1;
-            return state = { ...state, currentQuestion: q} ;
-        }
+            // state = 
+            // {
+            //     quiz: {
+            //         name: "Studenträtt",
+            //         desc: "Ett quiz om studenträtt",
+            //         numberOfQuestion: 2
+            //     },
+            //     currentView: UI.FRONT,
+            //     currentQuestion: 0,
+            //     questions: [{
+            //         text: "Hej",
+            //         ans: [" "," ", " "],
+            //         ansText: "Get money",
+            //         correctIndex: 1
+            //     }, {
+            //         text: "Hej",
+            //         ans: [" ", " ", " "],
+            //         ansText: "Get money",
+            //         correctIndex: 1
+            //     }],
+            //     selectedAnswer: 0,
+            //     correctAnswers: 0
 
-        case "GET_ANSWERS":{
-            data = getdata (action.questionid);
-            return state = {...state, answersData: data};
-        }
-        defult: {
-            state = 
-            {
-                quizName: "Studenträtt",
-                desc: "Ett quiz om studenträtt",
-                numberOfQuestion: 2,
-                questions: [{
-                    text: "Hej",
-                    ans: [" "," ", " "],
-                    ansText: "Get money",
-                    correctIndex: 1
-                }, {
-                    text: "Hej",
-                    ans: [" ", " ", " "],
-                    ansText: "Get money",
-                    correctIndex: 1
-                }],
-                currentQuestion: 0,
-                selectedAnswer: 0,
-                correctAnswers: 0
+
+
+const quiz = (state = {}, action) => {
+    switch(action.type){
+        case FETCH_QUIZ_SUCCESS: {
+            return {
+                name: action.quiz.name,
+                desc: action.quiz.desc,
+                numberOfQuestions: action.quiz.numberOfQuestions,
+                isFetchinQuiz: false
             }
-            return state;
         }
-            
+        case FETCH_QUIZ_REQUEST: {
+            return {...state,
+                isFetchinQuiz: true
+            }
+        }
     }
 };
 
-const questionsReducer = (state = [], action) => {
-    switch(action.type) {
-        case NEXT_QUESTION
-    }
-}
 
-const quizApp = (state = [], action) => {
+const questions = (state = [], action) => {
     switch(action.type) {
-        case FETCH_QUIZ: {
-            return state;
-        }
-        case FINISH_QUIZ: {
-            return state;
+        case FETCH_QUIZ_RECEIVE:{
+            return action.quiz.questions;
         }
     }
 };
+
+const currentQuestion = (state = 0, action) => {
+    switch(action.type) {
+        case NEXT_QUESTION:
+            return state + 1;
+    }
+};
+
+const selectedAnswer = (state = 0, action) => {
+    switch(action.type) {
+        case ANSWER_QUESTION:
+            return action.answer;
+    }
+};
+
+const currentView = (state = UI.FRONT, action) => {
+    switch(action.type){
+        case SET_UI_VIEW:
+            return action.view;
+        case ANSWER_QUESTION:
+            return UI.ANSWER;
+        case NEXT_QUESTION:
+            return UI.QUESTION;
+        case FINISH_QUIZ:
+            return UI.SUMMARY;
+        case START_QUIZ:
+            return UI.QUESTION;
+    }
+};
+
+const correctAnswers = (state = 0, action) => {
+    switch(action.type) {
+        case CORRECT_ANSWER:
+            return state + 1;
+    }
+};
+
+
+
+export const quizApp = combineReducers({
+    quiz,
+    currentView,
+    currentQuestion,
+    questions,
+    selectedAnswer,
+    correctAnswers,
+});
