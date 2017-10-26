@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import ShowQuiz from "./containers/ShowQuiz.js";
+import ShowQuiz from "./containers/showQuiz.js";
 
 class App extends Component {
   render() {
