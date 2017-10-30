@@ -2,6 +2,10 @@ import { combineReducers, createStore } from "redux";
 import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,ANSWER_QUESTION,FINISH_QUIZ,START_QUIZ,CORRECT_ANSWER,INCORRECT_ANSWER,SET_UI_VIEW
     } from '../actions';
 
+
+//ALL PARTS OF STATE LISTEN TO THE CONSTANTS SET BELOW
+//MEANING ON CHANGE IT WILL UPDATE
+
 let hardState = {
 
     quiz: {
@@ -70,6 +74,9 @@ const currentQuestion = (state = 0, action) => {
     
 };
 
+//-- selectedAnswer is being set here --
+//Happens when ACTION answerQuestion has been dispatched
+//OBS! INCORRECT OR CORRECT doesn't affect what selectedAnswer becomes since answer is what user selects 
 const selectedAnswer = (state = 0, action) => {
     switch(action.type) {
         case INCORRECT_ANSWER:
@@ -81,6 +88,9 @@ const selectedAnswer = (state = 0, action) => {
     }
 };
 
+//-- currentView variable in state switches here -- 
+//this is the variable controlling what view is displayed
+//several actions can trigger a change here 
 const currentView = (state = UI.FRONT, action) => {
     switch(action.type){
         case SET_UI_VIEW:
@@ -100,6 +110,9 @@ const currentView = (state = UI.FRONT, action) => {
     }
 };
 
+//-- Setting correct answer -- 
+//Change happens after ACTION answerQuestion has been dispatched 
+//From action CORRECT_ANSWER or INCORRECT_ANSWER is returned which affects what happens here
 const correctAnswers = (state = 0, action) => {
     switch(action.type) {
         case CORRECT_ANSWER:

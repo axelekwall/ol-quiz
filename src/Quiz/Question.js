@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
 
+// Component includes 
+	//* Question text
+	//* Answer options
+
+//When clicking on an answer button: 
+	//function onClickAnswer() is triggered - this function is in showQuiz.js 
+	//It triggers ACTION 'answerQuestion' found in '/actions/index.js'
 
 class Question extends Component {
   render() {
