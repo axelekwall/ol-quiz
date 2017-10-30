@@ -8,37 +8,15 @@ import FrontView from "./FrontView.js";
 import {UI} from "../actions"
 
 class Quiz extends Component {
-   
-   constructor(props) {
-      super(props);
-      this.state = {
-          quiz: {
-                name: "Studenträtt",
-                desc: "Ett quiz om studenträtt",
-                numberOfQuestions: 2
-          },
-          currentView: "UI_SHOW_FRONT",
-          currentQuestion: 0,
-          questions: [{text: "Du bryter armen dagen innan algebratentan. Du kuggar eftersom att du inte kan skriva och tappar ditt csn. Vad kan du göra?",
-                        ans: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean.", 
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean.", 
-                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean."],
-                        ansText: "Answer text here",
-                        correctIndex: 1},
-                      {text: "Fråga 2",
-                      ans: ["Ja2", "Nej2", "Kanske2", "Hej2"],
-                      ansText: "Answer text 2 here",
-                      correctIndex: 2}],
-          selectedAnswer: 0,
-          correctAnswers: 0          
-        };
+  
+  constructor(props) {
+    super(props);
+    //Bind functions
+    this.nextQuestion = this.nextQuestion.bind(this);
+    //this.showAnswer = this.showAnswer.bind(this);
+  }
 
-      //Bind functions
-      this.nextQuestion = this.nextQuestion.bind(this);
-      //this.showAnswer = this.showAnswer.bind(this);
-   }
-
-   nextQuestion(e){
+  nextQuestion(e){
     //OM DET FINNS FLER FRÅGOR 
     if(this.props.questions.length >= (this.props.currentQuestion+2)){
       //ACTION - NÄSTA FRÅGA 
@@ -55,17 +33,7 @@ class Quiz extends Component {
     }
     
 
-   }
-
-
-   showAnswer(e){
-
-        //SET SELECTED ANSWER
-        //this.setState({selectedAnswer: })
-
-        //ACTION SHOW ANSWER
-        //this.setState({currentView: "UI_SHOW_ANSWER"});    
-   }
+  }
 
 
   render() {

@@ -36,10 +36,12 @@ export function setView(view){
     return {type: SET_UI_VIEW, view};
 }
 export function answerQuestion(answer,correct) {
-    console.log("fel")
-    return { type: INCORRECT_ANSWER, answer };
+    if(answer === correct){
+        return { type: CORRECT_ANSWER, answer };    
+    } else {
+        return { type: INCORRECT_ANSWER, answer };
+    }   
 }
-
 export function nextQuestion() {
     return { type: NEXT_QUESTION };
 }
