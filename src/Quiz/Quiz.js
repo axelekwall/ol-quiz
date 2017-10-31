@@ -1,40 +1,75 @@
 import React, {Component} from 'react';
 import Progress from "./Progress.js";
 import Question from "./Question.js";
-import Visualization from "./Visualization.js";
+import Answer from "./Answer.js";
 import Controls from "./Controls.js";
+import Finished from "./Finished.js";
+import FrontView from "./FrontView.js";
+import {UI} from "../actions"
 
 class Quiz extends Component {
-   
-   constructor(props) {
-      super(props);
-      this.state = {
-         questions: ["Fråga 1", "Fråga 2"],
-         questionNumber: 0
-      };
-      this.increaseQuestion = this.increaseQuestion.bind(this);
-   }
+  
+  constructor(props) {
+    super(props);
+    //Bind functions
+    this.nextQuestion = this.nextQuestion.bind(this);
+    //this.showAnswer = this.showAnswer.bind(this);
+  }
 
-   increaseQuestion(e){
-   	console.log(e.target.value) //Sparar svar
-   	if (e.target.value === "ja" && this.state.questions.length > this.state.questionNumber){
-   		this.setState({questionNumber: this.state.questionNumber+1});
-   	}
-   	
-   	console.log(this.state)
-   }
+  nextQuestion(e){
+    //OM DET FINNS FLER FRÅGOR 
+    if(this.props.questions.length >= (this.props.currentQuestion+2)){
+      //ACTION - NÄSTA FRÅGA 
+      this.props.onClickNext()
+      //this.setState({currentQuestion: this.state.currentQuestion+1}); //Så länge
+
+      //ACTION - SHOW QUESTION VIEW
+      //this.setState({currentView: "UI_SHOW_QUESTION"}); //Så länge
+    }
+    else{
+      // SHOW FINISHED VIEW
+      this.props.onFinishQuiz()
+      //this.setState({currentView: "UI_SHOW_SUMMARY"});
+    }
+    
+
+  }
 
 
   render() {
+    var content;
+    var progressContent;
+    // Visar komponent/view beroende av statet i state-trädet
+    switch(this.props.currentView){
+      case UI.FRONT:
+        content = <FrontView quiz={this.props.quiz} onClick={this.props.onClickStart}/>
+        break;
+      case UI.QUESTION:
+        progressContent =<Progress progressCount={this.props.currentQuestion+1} progressLength={this.props.quiz.numberOfQuestions}/>
+        content = <Question question={this.props.questions[this.props.currentQuestion]} onClickAnswer={this.props.onClickAnswer}/>
+        break;
+      case UI.ANSWER: 
+        progressContent =<Progress progressCount={this.props.currentQuestion+1} progressLength={this.props.quiz.numberOfQuestions}/>
+        content = <Answer question={this.props.questions[this.props.currentQuestion]} onClick={this.nextQuestion} selectedAnswer = {this.props.selectedAnswer}/>
+        break;
+      case UI.SUMMARY: 
+        content = <Finished correctAnswers={this.props.correctAnswers} numberOfQuestions={this.props.quiz.numberOfQuestions}/>
+        break;
+      default:
+        content = <FrontView quiz={this.props.quiz} onClick={this.props.onClickStart}/>
+        break;
+    }
+
   	return(
   		<div>
-  			<Progress progressCount={this.state.questionNumber}/>
-  			<Question actionME={this.increaseQuestion} questions={this.state.questions} questionNumber={this.state.questionNumber}/>
-  			<Visualization/>
-  			<Controls/>
-		</div>
+        {progressContent}
+        {content}
+      </div>
   	)
   }
 }
 
 export default Quiz;
+
+
+
