@@ -20,7 +20,7 @@ class Answer extends Component {
                     <h3>25%</h3> 
                 </div>
                 <div className="answer-statistics-text">
-                    <h4>svarade rätt på den här frågan.</h4>
+                    <h4>har svarat rätt på den här frågan.</h4>
                 </div>
                 <div className="answer-info">
                     <p>{this.props.question.ansText}</p>

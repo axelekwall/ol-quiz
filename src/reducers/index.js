@@ -19,7 +19,7 @@ let hardState = {
                 ans: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean.", 
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean.", 
                         "Lorem ipsum dolor sit amet, consectetur adipiscing elit aenean."],
-                ansText: "Answer text here",
+                ansText: "Ett läkarintyg och ett prat med försäkringskassan ska räcka, sen löser sig resten (med CSN till exempel) i ett parallellt myndighetsuniversum. Vid förändrad studieplan kan även studievägledaren vara en bra person att hålla kontakten med också.",
                 correctIndex: 1},
                 {text: "Fråga 2",
                 ans: ["Ja2", "Nej2", "Kanske2", "Hej2"],
