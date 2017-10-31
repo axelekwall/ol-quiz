@@ -311,3 +311,60 @@ p{
 		min-height:4rem;
 	}
 }
+
+
+/* PROGRESS BAR */
+
+.prog-bar{
+	height: 50px;
+}
+.ProgressSteps {
+	display: block;
+}
+
+.ProgressSteps-Step {
+	background: rgb(102, 102, 102); 
+	border-radius: 50px; 
+	float: left; 
+	height: 27px; 
+	width: 27px;
+}
+
+.ProgressSteps-Step-activated {
+  background: rgb(238,81,46);
+}
+ 
+.ProgressSteps-Step-deactivated {
+/* ... */
+}
+ 
+.ProgressSteps-Step-current {
+ background: rgb(238,81,46);
+}  
+
+.ProgressSteps-Line {
+	background: rgb(102, 102, 102);
+    float: left;
+    height: 8px;
+    position: relative;
+    top: 10px;
+    width: 5%;
+}
+
+.ProgressSteps-Line-activated {
+  background: rgb(238,81,46);
+}
+	 
+.ProgressSteps-Line-deactivated {
+  /* ... */
+	    
+}
+
+@media (max-width: 500px){
+
+	.prog-bar{
+		margin-left: 20px;
+	}
+}
+
+/* END OF PROGRESSBAR */

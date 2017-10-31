@@ -38,15 +38,18 @@ class Quiz extends Component {
 
   render() {
     var content;
+    var progressContent;
     // Visar komponent/view beroende av statet i state-trädet
     switch(this.props.currentView){
       case UI.FRONT:
         content = <FrontView quiz={this.props.quiz} onClick={this.props.onClickStart}/>
         break;
       case UI.QUESTION:
+        progressContent =<Progress progressCount={this.props.currentQuestion+1} progressLength={this.props.quiz.numberOfQuestions}/>
         content = <Question question={this.props.questions[this.props.currentQuestion]} onClickAnswer={this.props.onClickAnswer}/>
         break;
       case UI.ANSWER: 
+        progressContent =<Progress progressCount={this.props.currentQuestion+1} progressLength={this.props.quiz.numberOfQuestions}/>
         content = <Answer question={this.props.questions[this.props.currentQuestion]} onClick={this.nextQuestion} selectedAnswer = {this.props.selectedAnswer}/>
         break;
       case UI.SUMMARY: 
@@ -59,7 +62,7 @@ class Quiz extends Component {
 
   	return(
   		<div>
-        <Progress progressCount={this.props.currentQuestion+1} progressLength={this.props.quiz.numberOfQuestions}/>
+        {progressContent}
         {content}
       </div>
   	)
