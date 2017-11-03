@@ -1,15 +1,15 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Option = sequelize.define('Option', {
-    text: DataTypes.STRING,
-    alt: DataTypes.STRING,
-  },
-  {
+  var Result = sequelize.define('Result', {
+    correctAns: DataTypes.INTEGER,
+  }, {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
+        Result.belongsTo(models.Quiz);
+        Result.hasMany(models.Answer);
       },
     },
   });
-  return Option;
+  return Result;
 };
