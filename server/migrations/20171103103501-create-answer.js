@@ -14,21 +14,21 @@ module.exports = {
       resultId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'result',
+          model: 'Results',
           key: 'id',
         },
       },
       questionId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'question',
+          model: 'Questions',
           key: 'id',
         },
       },
       alternativeId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'alternative',
+          model: 'Alternatives',
           key: 'id',
         },
       },

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const config = {
   development: {
     url: process.env.DATABASE_URL,

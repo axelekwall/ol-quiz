@@ -20,7 +20,6 @@ db.sequelize.authenticate()
 .catch((err) => {
   console.error('Unable to connect to the database:', err);
 });
-db.sequelize.sync({force: true});
 
 // Endpoints
 app.get('/api', (req, res) => {
