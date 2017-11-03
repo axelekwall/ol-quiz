@@ -199,6 +199,9 @@ p{
 	text-align: right;
 	margin-top: 20px;
 }
+.next-button-div button:hover{
+	background-color: rgba(238, 81, 46, 0.9);
+}
 .answer-text{
 	grid-area: answerText;
 }
@@ -267,7 +270,11 @@ p{
 
 /*END OF ANSWER SECTION*/
 
-/*QUIZ QUESTION AND OPTIONS */
+
+/*-------- QUIZ QUESTION AND OPTIONS ------------*/
+.answerbuttons button:hover{
+	background-color: rgba(238, 81, 46, 0.9);
+}
 
 .answer-options3{
 	display: grid;
