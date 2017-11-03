@@ -20,10 +20,15 @@ db.sequelize.authenticate()
 .catch((err) => {
   console.error('Unable to connect to the database:', err);
 });
+db.sequelize.sync({force: true});
 
 // Endpoints
 app.get('/api', (req, res) => {
   res.send('Hi from API!');
+});
+
+app.get('/api/quiz', (req, res) => {
+  res.send('Quiz things!');
 });
 
 // Express only serves static assets in production
