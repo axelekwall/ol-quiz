@@ -404,3 +404,14 @@ p{
 }
 
 /* END OF PROGRESSBAR */
+
+/*LAST PAGE*/
+#finished-view{
+	text-align: center;
+}
+
+#finished-view h1{
+	font-size: 60px;
+}
+
+/*END OF LAST PAGE*/

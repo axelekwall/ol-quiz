@@ -31,7 +31,6 @@ let hardState = {
 }
 
 
-
 const quiz = (state = hardState.quiz, action) => {
     switch(action.type){
         case FETCH_QUIZ_SUCCESS: {
