@@ -10,7 +10,7 @@ let hardState = {
 
     quiz: {
             name: "Studenträtt",
-            desc: "Ett quiz om studenträtt",
+            desc: "Hur bra koll har du på vad du som student får och inte får göra? Och hur bra koll har du på vad du måste göra?",
             numberOfQuestions: 2
     },
     currentView: "UI_SHOW_FRONT",

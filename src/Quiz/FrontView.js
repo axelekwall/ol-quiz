@@ -10,17 +10,14 @@ import {Motion, spring} from 'react-motion';
 
 const FrontView = ({quiz, onClick}) => (
   <div className="front-view-container">
-	    <h1>{quiz.name}
-	    	<strong>{quiz.desc}</strong>
-    	</h1>
-
-      <Motion defaultStyle={{margin:80, opacity:0}} style={{margin: spring(0, {stiffness:50, damping:20}), opacity: spring(1, {stiffness: 180, damping: 100})}}>
-  		{interpolatingStyle => <div style={interpolatingStyle}>
-    		<button className="start-button"onClick={e => {onClick()}}>Start</button>
-   		</div>}
-	</Motion>
-
-
+	 <div className="front-view-content">
+      <h1>{quiz.name}</h1>
+	    	<p>{quiz.desc}
+        <br/>
+        <br/>
+        Ta Osqledarens quiz och testa dina kunskaper!</p>
+        <button className="start-button"onClick={e => {onClick()}}>Starta quiz</button>
+     </div>
   </div>
 )
 

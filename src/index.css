@@ -19,6 +19,7 @@ body {
   position:relative;
   padding-bottom:6rem;
 }
+
 @font-face {
     font-family: "Museo Slab 900";
     src: url(./Assets/Fonts/Museo_Slab_900.otf);
@@ -31,13 +32,6 @@ body {
 
 h1, h2{
 	font-family: "Museo Slab 900";
-}
-
-h1 strong{
-	font-family: "Chaparral Pro Regular";
-	font-size: 0.5em;
-	display:block;
-	line-height: 2;
 }
 
 h2{
@@ -87,9 +81,48 @@ p{
 
 .front-view-container{
 	text-align: center;
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+	width:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	background-image: url("Assets/Images/Olof_Palme_1968.jpg");
+}
+
+.front-view-content{
+	text-align: left;
+	margin-top: 10%;
+	max-width: 500px;
+	text-align: center;
+}
+
+.front-view-content h1{
+	font-size:4.5em;
+	text-align: right;
+	padding-left:2%;
+	margin-bottom: 10px;
+}
+
+.front-view-content p{
+	text-align: left;
+	font-size: 1em;
+	padding-left:15%;
+	padding-top:1%;
+	padding-bottom:1%;
+	padding-right:2%;
+	margin-bottom: 5%;
+	margin-top: 0px;
+	left:0;
+	background-color: rgba(51, 51, 51, 0.9);
+	width: 100%;
 }
 
 .start-button{
+	opacity: 1;
 	background-color: rgb(238,81,46);
     color: white;
     height: 40px;
@@ -98,7 +131,21 @@ p{
     border: none;
     border-radius: 5px;
     font-family: "Chaparral Pro Regular";
-    margin-top:100px;
+    margin-top: 5%;
+}
+
+@media (max-width: 500px){
+	.front-view-content h1{
+		font-size:3.5em;
+		margin-top:20%;
+		text-align: left;
+	}
+
+	.front-view-content p{
+		width: 85%;
+		padding-top:4%;
+		padding-bottom:4%;
+	}
 }
 
 /*ANSWER SECTION */
