@@ -22,12 +22,21 @@ db.sequelize.authenticate()
 });
 
 // Endpoints
-app.get('/api', (req, res) => {
+app.post('/api/answer', (req, res) => {
   res.send('Hi from API!');
 });
 
-app.get('/api/quiz', (req, res) => {
-  res.send('Quiz things!');
+app.get('/api/result/question/:questionid', (req, res) => {
+  const questionId = req.params['questionid'];
+  res.send(questionId);
+});
+
+app.get('/api/quiz/:name', (req, res) => {
+  res.send('Hej');
+});
+
+app.get('/api/result/quiz/:quiz', (req, res) => {
+  res.send('Hej');
 });
 
 // Express only serves static assets in production
