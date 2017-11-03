@@ -18,6 +18,11 @@ body {
   min-height: 100%;
   position:relative;
   padding-bottom:6rem;
+  background-image:url(./Assets/Images/Olof_Palme_1968_dark.jpg);
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-attachment: fixed;
+  background-size:  cover;
 }
 
 @font-face {
@@ -134,7 +139,7 @@ p{
     margin-top: 5%;
 }
 
-@media (max-width: 500px){
+@media (max-width:720px){
 	.front-view-content h1{
 		font-size:3.5em;
 		margin-top:20%;
@@ -151,7 +156,6 @@ p{
 /*ANSWER SECTION */
 
 .answer-content{
-	background-color: rgb(51,51,51);
   	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-auto-rows: minmax(10px);
@@ -163,7 +167,7 @@ p{
 }
 
 .answer-content p{
-	font-size: 15px;
+	font-size: 16px;
 	margin-top:50px;
 }
 
@@ -215,13 +219,13 @@ p{
 	grid-area: answerInfo;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 720px) {
 	.answer-content p{
-		font-size: 18px;
+		font-size: 15px;
 		margin-top:20px;
 	}
 	.answer-content h1{
-		font-size: 100px;
+		font-size: 80px;
 	}	
 	.answer-content h3{
 		font-size: 40px;
@@ -276,6 +280,24 @@ p{
 	background-color: rgba(238, 81, 46, 0.9);
 }
 
+.answer-options2{
+	display: grid;
+	grid-template-columns: repeat(2);
+	grid-gap: 25px;
+	grid-auto-rows: minmax(100px, auto);
+	grid-auto-columns: minmax(200px, auto);
+}
+
+.answer-options2 #ans0{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.answer-options2 #ans1{
+	grid-column: 2;
+	grid-row: 1;
+}
+
 .answer-options3{
 	display: grid;
 	grid-template-columns: repeat(3);
@@ -327,7 +349,7 @@ p{
 	grid-row: 1;
 }
 
-.answer-options3 button, .answer-options4 button{
+.answer-options2 button, .answer-options3 button, .answer-options4 button{
 	min-height:8rem;
 	background-color: rgb(238, 81, 46);
 	border:none;
@@ -339,16 +361,35 @@ p{
 	border-radius:5px;
 }
 
-@media (max-width: 500px){
+@media (max-width:720px){
 	.display-question{
 		margin: 2rem;
+	}
+
+	.answer-options2{
+		display: grid;
+		grid-template-columns: repeat(1);
+		grid-template-rows:2;
+		grid-auto-rows: minmax(70px, auto);
+		margin-left:2rem;
+		margin-right:2rem;
+	}
+
+	.answer-options2 #ans0{
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.answer-options2 #ans1{
+		grid-column: 1;
+		grid-row: 2;
 	}
 
 	.answer-options3{
 		display: grid;
 		grid-template-columns: repeat(1);
 		grid-template-rows:3;
-		grid-auto-rows: minmax(100px, auto);
+		grid-auto-rows: minmax(70px, auto);
 		margin-left:2rem;
 		margin-right:2rem;
 	}
@@ -372,7 +413,7 @@ p{
 		display: grid;
 		grid-template-columns: repeat(1);
 		grid-template-rows:3;
-		grid-auto-rows: minmax(100px, auto);
+		grid-auto-rows: minmax(70px, auto);
 		margin-left:2rem;
 		margin-right:2rem;
 	}
@@ -397,7 +438,7 @@ p{
 		grid-row: 4;
 	}
 
-	.answer-options3 button, .answer-options4 button{
+	.answer-options2 button, .answer-options3 button, .answer-options4 button{
 		min-height:4rem;
 	}
 }
@@ -407,6 +448,7 @@ p{
 
 .prog-bar{
 	height: 50px;
+	margin-left: 20%;
 }
 .ProgressSteps {
 	display: block;
@@ -438,7 +480,7 @@ p{
     height: 8px;
     position: relative;
     top: 10px;
-    width: 5%;
+    width: 10%;
 }
 
 .ProgressSteps-Line-activated {
@@ -450,7 +492,7 @@ p{
 	    
 }
 
-@media (max-width: 500px){
+@media (max-width:720px){
 
 	.prog-bar{
 		margin-left: 20px;

@@ -21,31 +21,7 @@ class Answer extends Component {
   constructor(props){
     super(props)
     //DATABASKNAS: HÄR SKA VI STOPPA IN HUR MÅNGA PROCENT SOM SVARAT RÄTT PÅ FRÅGAN
-    this.endPercent = 75;
-
-    this.state = {percent: 0}
-    this.tick = this.tick.bind(this)
-    this.interval = 10;
-  }
-
-  componentDidMount() {
-      this.setState({percent: 0 });
-
-      this.intervalRun = setInterval(this.tick, this.interval);
-    }
-
-  tick(){
-    if(this.state.percent < this.endPercent){
-        clearInterval(this.intervalRun);
-
-        this.interval = this.interval * 1.03;
-
-        this.intervalRun = setInterval(this.tick, this.interval);
-
-        this.setState({percent: this.state.percent + 1});
-      }else{
-        clearInterval(this.intervalRun);
-      }
+    this.percent = 75;
   }
 
   render() {
@@ -70,7 +46,7 @@ class Answer extends Component {
                 </StyleRoot>
                 
                 <div className="answer-statistics">
-                    <h3>{this.state.percent}%</h3>
+                    <h3>{this.percent}%</h3>
                 </div>
                 
                 <div className="answer-statistics-text">
