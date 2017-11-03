@@ -11,7 +11,7 @@ module.exports = {
       correctAns: {
         type: Sequelize.INTEGER,
       },
-      quizId: {
+      QuizId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Quizzes',

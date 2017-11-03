@@ -22,19 +22,43 @@ db.sequelize.authenticate()
 });
 
 // Endpoints
+
+// Post answer to one question
 app.post('/api/answer', (req, res) => {
   res.send('Hi from API!');
 });
 
-app.get('/api/result/question/:questionid', (req, res) => {
-  const questionId = req.params['questionid'];
-  res.send(questionId);
+// Get result for one question
+app.get('/api/result/question/:questionId', (req, res) => {
+  const questionId = req.params['questionId'];
+  db['Answer'].findAll({
+    where: {
+      QuestionId: questionId,
+    },
+  })
+  .then((answers) => {
+    if (!answers.length) {
+      res.send(JSON.stringify({value: 0}));
+    } else {
+      const totalAns = answers.length;
+      let correctAns = 0;
+      answers.forEach((ans) => {
+        if (ans.isCorrect = true) {
+          correctAns++;
+        }
+      });
+      const percentageCorrect = Math.round((correctAns/totalAns) * 100);
+      res.send(JSON.stringify({value: percentageCorrect}));
+    }
+  });
 });
 
+// Get quiz
 app.get('/api/quiz/:name', (req, res) => {
   res.send('Hej');
 });
 
+// Get tota result fr one quiz
 app.get('/api/result/quiz/:quiz', (req, res) => {
   res.send('Hej');
 });

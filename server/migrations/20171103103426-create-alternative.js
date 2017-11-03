@@ -14,7 +14,7 @@ module.exports = {
       isCorrect: {
         type: Sequelize.BOOLEAN,
       },
-      questionId: {
+      QuestionId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Questions',

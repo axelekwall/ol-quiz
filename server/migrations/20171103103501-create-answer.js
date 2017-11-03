@@ -11,21 +11,21 @@ module.exports = {
       isCorrect: {
         type: Sequelize.BOOLEAN,
       },
-      resultId: {
+      ResultId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Results',
           key: 'id',
         },
       },
-      questionId: {
+      QuestionId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Questions',
           key: 'id',
         },
       },
-      alternativeId: {
+      AlternativeId: {
         type: Sequelize.INTEGER,
         references: {
           model: 'Alternatives',
