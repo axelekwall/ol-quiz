@@ -9,7 +9,8 @@ const mapStateToProps = state => {
     questions: state.questions,
     selectedAnswer: state.selectedAnswer,
     correctAnswers: state.correctAnswers,
-    currentQuestion: state.currentQuestion
+    currentQuestion: state.currentQuestion,
+    answerStat: state.answerStat
   }
 }
 

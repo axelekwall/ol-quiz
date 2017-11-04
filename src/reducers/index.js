@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from "redux";
-import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,ANSWER_QUESTION,FINISH_QUIZ,START_QUIZ,CORRECT_ANSWER,INCORRECT_ANSWER,SET_UI_VIEW
+import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,ANSWER_QUESTION,FINISH_QUIZ,START_QUIZ,CORRECT_ANSWER,INCORRECT_ANSWER,SET_UI_VIEW,FETCH_ANSWER_REQUEST,FETCH_ANSWER_SUCCESS
     } from '../actions';
 
 
@@ -26,7 +26,8 @@ let hardState = {
                 ansText: "Answer text 2 here",
                 correctIndex: 2}],
     selectedAnswer: 0,
-    correctAnswers: 0          
+    correctAnswers: 0,
+    answerStat: 0          
     
 }
 
@@ -123,6 +124,15 @@ const correctAnswers = (state = 0, action) => {
     }
 };
 
+const answerStat = (state = 0, action) => {
+    switch(action.type) {
+        case FETCH_ANSWER_SUCCESS:
+            return action.value;
+        default:
+            return state;
+    }
+}
+
 
 
 const quizApp = combineReducers({
@@ -132,6 +142,7 @@ const quizApp = combineReducers({
     questions,
     selectedAnswer,
     correctAnswers,
+    answerStat
 });
 
 export default quizApp;
