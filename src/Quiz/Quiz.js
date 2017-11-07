@@ -53,7 +53,7 @@ class Quiz extends Component {
         content = <Answer question={this.props.questions[this.props.currentQuestion]} onClick={this.nextQuestion} selectedAnswer = {this.props.selectedAnswer}/>
         break;
       case UI.SUMMARY: 
-        content = <Finished correctAnswers={this.props.correctAnswers} numberOfQuestions={this.props.quiz.numberOfQuestions}/>
+        content = <Finished correctAnswers={this.props.correctAnswers} numberOfQuestions={this.props.quiz.numberOfQuestions} number={0}/>
         break;
       default:
         content = <FrontView quiz={this.props.quiz} onClick={this.props.onClickStart}/>
