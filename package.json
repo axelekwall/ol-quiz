@@ -2,14 +2,12 @@
   "name": "ol-quiz",
   "description": "Osqledaren Quiz App",
   "version": "0.1.0",
-  "proxy": "http://localhost:3001/",
   "author": "OL Dev Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/axelekwall/ol-quiz/issues"
   },
   "dependencies": {
-    "dotenv": "^4.0.0",
     "path": "^0.12.7",
     "radium": "^0.19.6",
     "react": "^16.0.0",
