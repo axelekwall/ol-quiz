@@ -30,6 +30,7 @@ import Transition from 'react-motion-ui-pack';
 //   }
 // }
 
+
 const FrontView = ({quiz, onClick}) => (
     <div className="front-view-container">
         <Transition
@@ -46,6 +47,7 @@ const FrontView = ({quiz, onClick}) => (
             Ta Osqledarens quiz och testa dina kunskaper!
           </p>
           <button className="start-button"onClick={e => {onClick()}}>Starta quiz</button>
+          <button className="start-button"onClick={e => {onClickFetch()}}>Fetch</button>
         </div>
         </Transition>
       </div>

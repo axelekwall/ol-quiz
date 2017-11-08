@@ -27,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onFinishQuiz: () => {
         dispatch(finishQuiz());
+    },
+    onClickFetch: (name) => {
+      dispatch(fetchQuiz(name));
     }
   }
 }

@@ -95,7 +95,7 @@ export function fetchQuiz(name) {
     return dispatch => {
       dispatch(requestQuiz());
 
-      return fetch('/api/quiz/${name}')
+      return fetch('/api/quiz/'+name)
         .then(response => response.json())
         .then(json => dispatch(receiveQuiz(json)));
     }

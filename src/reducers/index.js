@@ -11,7 +11,8 @@ let hardState = {
     quiz: {
             name: "Studenträtt",
             desc: "Hur bra koll har du på vad du som student får och inte får göra? Och hur bra koll har du på vad du måste göra?",
-            numberOfQuestions: 6
+            numberOfQuestions: 6,
+            isFetchingQuiz: false
     },
     currentView: "UI_SHOW_FRONT",
     currentQuestion: 0,
@@ -51,7 +52,7 @@ let hardState = {
                 ],
     selectedAnswer: 0,
     correctAnswers: 0,
-    answerStat: 0          
+    answerStat: 0        
     
 }
 

@@ -56,7 +56,7 @@ class Answer extends Component {
                     <p>{this.props.question.ansText}</p>
                 </div>
                 <div className="next-button-div">
-                    <button type="button" className="next-question-button" onClick={this.props.onClick}>Nästa</button>
+                    <center><button type="button" className="next-question-button" onClick={this.props.onClick}>Nästa</button></center>
                 </div>
 			</div>
       

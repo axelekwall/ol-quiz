@@ -37,6 +37,7 @@ class Quiz extends Component {
         content = <FrontView 
                     quiz={this.props.quiz} 
                     onClick={this.props.onClickStart}
+                    onClickFetch={this.props.onClickFetch("studentrights")}
                   />
         break;
       case UI.QUESTION:
