@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-
-
 import Transition from 'react-motion-ui-pack';
+import LoadingView from './LoadingView.js';
 
 
 //Component includes 
@@ -30,27 +29,35 @@ import Transition from 'react-motion-ui-pack';
 //   }
 // }
 
-const FrontView = ({quiz, onClick}) => (
-    <div className="front-view-container">
-        <Transition
-          enter={{ opacity: 1, translateX: 0 }}
-          leave={{ opacity: 0, translateX: -100 }}
-          component={false}
-        >
+
+class FrontView extends Component {  
+  render() {
+    var loaded =         
+      <Transition
+        enter={{ opacity: 1, translateX: 0 }}
+        leave={{ opacity: 0, translateX: -100 }}
+        component={false}
+      >
         <div className="front-view-content" key="trans">
-          <h1>{quiz.name}</h1>
+          <h1>{this.props.quiz.name}</h1>
           <p>
-            {quiz.desc}
+            {this.props.quiz.desc}
             <br/>
             <br/>
             Ta Osqledarens quiz och testa dina kunskaper!
           </p>
-          <button className="start-button"onClick={e => {onClick()}}>Starta quiz</button>
+          <button className="start-button"onClick={e => {this.props.onClick()}}>Starta quiz</button>
         </div>
-        </Transition>
+      </Transition>;
+
+
+    return(
+      <div className="front-view-container">
+        {this.props.quiz.isFetchingQuiz ? <LoadingView/> : loaded }
       </div>
-  
-)
+    );
+  } 
+}
 
 
 export default FrontView;

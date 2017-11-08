@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-
 import Transition from 'react-motion-ui-pack';
-import { bounceInRight } from 'react-animations'
-import Radium, {StyleRoot} from 'radium';
 
 // Component includes 
 	//* Question text
@@ -29,16 +26,16 @@ class Question extends Component {
 						<h2>
 							{this.props.question.text}
 							<br/>
-							<center><img src={this.props.question.img}/></center>
+							<center><img src={this.props.question.img} alt=''/></center>
 						</h2>
 						
 					</div>
-					<div className={"answerbuttons answer-options"+this.props.question.ans.length}>
-						{this.props.question.ans.map((answer, index) => (
-							<button id={"ans" + index} value={index} key={index} onClick={() => {this.props.onClickAnswer(index,this.props.question.correctIndex)}}>{answer}</button>
+					<div className={"answerbuttons answer-options"+this.props.question.alternatives.length}>
+						{this.props.question.alternatives.map((answer, index) => (
+							<button id={"ans" + index} value={index} key={index} onClick={() => {this.props.onClickAnswer(answer.isCorrect)}}>{answer.text}</button>
 						))}
+					</div>
 				</div>
-			</div>
 
 		</Transition>
   	)

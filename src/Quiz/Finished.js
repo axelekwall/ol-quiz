@@ -53,7 +53,7 @@ class Finished extends Component {
           <p>{infotext}</p>
     	
           <div id="link-to-ol">
-          <a href="http://www.osqledaren.se" >Till Osqledaren.se</a>
+            <a href="http://www.osqledaren.se" >Till Osqledaren.se</a>
           </div>		
   		</div>
 		)
