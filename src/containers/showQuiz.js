@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { answerQuestion, nextQuestion, correctAnswer, startQuiz, finishQuiz} from '../actions'
+import { answerQuestion, nextQuestion, startQuiz, finishQuiz, fetchQuiz} from '../actions'
 import Quiz from '../Quiz/Quiz.js'
 
 const mapStateToProps = state => {
@@ -9,15 +9,14 @@ const mapStateToProps = state => {
     questions: state.questions,
     selectedAnswer: state.selectedAnswer,
     correctAnswers: state.correctAnswers,
-    currentQuestion: state.currentQuestion,
-    answerStat: state.answerStat
+    currentQuestion: state.currentQuestion
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickAnswer: (answer,correct) => {
-        dispatch(answerQuestion(answer,correct));
+    onClickAnswer: (correct) => {
+        dispatch(answerQuestion(correct));
     },
     onClickNext: () => {
         dispatch(nextQuestion());

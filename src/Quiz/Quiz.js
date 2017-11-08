@@ -2,18 +2,11 @@ import React, {Component} from 'react';
 import Progress from "./Progress.js";
 import Question from "./Question.js";
 import Answer from "./Answer.js";
-import Controls from "./Controls.js";
 import Finished from "./Finished.js";
 import FrontView from "./FrontView.js";
 import {UI} from "../actions"
 
 class Quiz extends Component {
-  
-  constructor(props) {
-    super(props);
-    //Bind functions
-    //this.showAnswer = this.showAnswer.bind(this);
-  }
 
   // Arrow-funktion, behöver inte binda this
   nextQuestion = (e) => {
@@ -28,16 +21,23 @@ class Quiz extends Component {
     }
   }
 
+  componentWillMount(){
+
+    // FETCH STUDENT RIGHTS QUIZ
+    // SHOULD BE IN THE ROUTER IN FUTURE, AND PROBABLY NOT HERE
+    this.props.onClickFetch("studentrights");
+  }
+
   render() {
     var content;
     var progressContent;
     // Visar komponent/view beroende av statet i state-trädet
     switch(this.props.currentView){
       case UI.FRONT:
-        content = <FrontView 
+        content = <FrontView
                     quiz={this.props.quiz} 
                     onClick={this.props.onClickStart}
-                    onClickFetch={this.props.onClickFetch("studentrights")}
+                    onClickFetch={this.props.onClickFetch}
                   />
         break;
       case UI.QUESTION:
@@ -46,9 +46,9 @@ class Quiz extends Component {
                             progressLength={this.props.quiz.numberOfQuestions}
                           />
         content = <Question 
-                    question={this.props.questions[this.props.currentQuestion]} 
+                    question={this.props.questions[this.props.currentQuestion].data} 
                     onClickAnswer={this.props.onClickAnswer}
-                    img={this.props.questions[this.props.currentQuestion] ? this.props.questions[this.props.currentQuestion] : null }
+                    img={this.props.questions[this.props.currentQuestion].data.img ? this.props.questions[this.props.currentQuestion].data.img : null }
                   />
         break;
       case UI.ANSWER: 
@@ -57,10 +57,9 @@ class Quiz extends Component {
                             progressLength={this.props.quiz.numberOfQuestions}
                           />
         content = <Answer 
-                    question={this.props.questions[this.props.currentQuestion]} 
+                    question={this.props.questions[this.props.currentQuestion].data} 
                     onClick={this.nextQuestion} 
                     selectedAnswer = {this.props.selectedAnswer}
-                    correct = {this.props.questions[this.props.currentQuestion].ans[this.props.questions[this.props.currentQuestion].correctIndex]}
                   />
         break;
       case UI.SUMMARY: 
