@@ -2,21 +2,12 @@
   "name": "ol-quiz",
   "description": "Osqledaren Quiz App",
   "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001/",
   "author": "OL Dev Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/axelekwall/ol-quiz/issues"
   },
-  "engines": {
-    "node": "8.6.0",
-    "npm": "5.3.0"
-  },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "concurrently": "^3.5.0",
-    "express": "^4.16.1",
     "path": "^0.12.7",
     "radium": "^0.19.6",
     "react": "^16.0.0",
@@ -34,17 +25,16 @@
     "eslint": "^4.8.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "concurrently": "^3.5.0"
   },
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "node server.js",
+    "dev": "npm run client",
+    "server": "firebase serve",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "docker": "docker-compose up",
-    "heroku-postbuild": "npm run build"
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",

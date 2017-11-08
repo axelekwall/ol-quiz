@@ -37,6 +37,10 @@ class Answer extends Component {
       result = "Fel"
       styleAnimation = styles.shake
     }
+
+    const headingStyle = {
+      fontSize: '1.3rem'
+    }
   	return(
   			<div className="answer-content">
                 <StyleRoot>
@@ -53,6 +57,8 @@ class Answer extends Component {
                     <h4>har svarat rätt på den här frågan.</h4>
                 </div>
                 <div className="answer-info">
+                    <h3 style={headingStyle}>Svaret är:</h3>
+                    <h2>{this.props.correct}</h2>
                     <p>{this.props.question.ansText}</p>
                 </div>
                 <div className="next-button-div">

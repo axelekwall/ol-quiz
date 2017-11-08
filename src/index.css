@@ -510,7 +510,15 @@ p{
 }
 
 #finished-view h1{
-	font-size: 60px;
+	font-size: 55px;
 }
 
+a{
+	color: rgb(238,81,46);
+	font-family: "Chaparral Pro Regular";
+}
+
+#link-to-ol{
+	margin-top: 20%;
+}
 /*END OF LAST PAGE*/

@@ -60,6 +60,7 @@ class Quiz extends Component {
                     question={this.props.questions[this.props.currentQuestion]} 
                     onClick={this.nextQuestion} 
                     selectedAnswer = {this.props.selectedAnswer}
+                    correct = {this.props.questions[this.props.currentQuestion].ans[this.props.questions[this.props.currentQuestion].correctIndex]}
                   />
         break;
       case UI.SUMMARY: 
