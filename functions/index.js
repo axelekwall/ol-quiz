@@ -14,17 +14,12 @@ const db = admin.firestore();
 // Router setup
 const router = express.Router();
 
-// Post answer to one question
-router.post('/result', (req, res) => {
+// Post results
+router.post('/result/quiz/:name', (req, res) => {
   res.send('Hi from API!');
 });
 
-// Get result for one question
-router.get('/result/question/:id', (req, res) => {
-  const questionId = req.params['id'];
-});
-
-// Get quiz
+// Get quiz data
 router.get('/quiz/:name', (req, res) => {
   const quizName = req.params['name'];
   let result = {};
@@ -41,6 +36,7 @@ router.get('/quiz/:name', (req, res) => {
     result.id = quiz.id;
     result.name = quizData.name;
     result.desc = quizData.description;
+    result.numberOfQuestions = questions.size;
     result.questions = [];
     questions.forEach((question) => {
       result.questions.push({id: question.id, data: question.data()});
@@ -50,11 +46,6 @@ router.get('/quiz/:name', (req, res) => {
   .catch((error) => {
     res.status(503).send(error);
   });
-});
-
-// Get tota result fr one quiz
-router.get('/result/quiz/:id', (req, res) => {
-  res.send('Hej');
 });
 
 // Tell app about router...
