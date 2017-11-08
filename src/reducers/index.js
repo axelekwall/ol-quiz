@@ -1,5 +1,5 @@
 import { combineReducers, createStore } from "redux";
-import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,ANSWER_QUESTION,FINISH_QUIZ,START_QUIZ,CORRECT_ANSWER,INCORRECT_ANSWER,SET_UI_VIEW
+import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,ANSWER_QUESTION,FINISH_QUIZ,START_QUIZ,CORRECT_ANSWER,INCORRECT_ANSWER,SET_UI_VIEW,FETCH_ANSWER_REQUEST,FETCH_ANSWER_SUCCESS
     } from '../actions';
 
 
@@ -37,10 +37,11 @@ let hardState = {
                 ansText: "Text kommer...",
                 correctIndex: 1},
 
-                {text: "Vad betyder följande symbol på ditt mecenatkort? <bild>",
+                {text: "Vad betyder följande symbol på ditt mecenatkort?",
                 ans: ["Rabatt på kårbokhandeln", "Tillträde till bibliotek anslutna till Allmänna Svenska Biblioteksförbundet", "Rättighet till att köpa studentbiljett i kollektivtrafiken"],
                 ansText: "  Symbolen står för Studentresekonceptet, som innebär att du har rätt till reserabatt i kollektivtrafiken. Det är ett koncept framtaget av Svensk Kollektivtrafik och symbolen är resultatet av en designtävling av en logotyp som hölls i samband med att idén utvecklades. Anslutna till Studentresekonceptet är Blekingetrafiken, Dalatrafik, Hallandstrafiken,, Jönköpings länstrafik, Kalmar länstrafik, Länstrafiken Kronoberg, Skånetrafiken, Västtrafik, X-trafik, Öresundståget och Östgötatrafiken. Ett krav för att utnyttja rabatten är att studera minst på en takt av 50% och 10 veckor per termin. Läs mer på http://www.svenskkollektivtrafik.se/ ",
-                correctIndex: 2},
+                correctIndex: 2,
+                img: "./static/studentresesymbolen.jpg"},
 
                 {text: "När är du INTE försäkrad via den automatiska studentförsäkringen?",
                 ans: ["Till och från skolan", "I KTHs lokaler", "Under mottagning", "På exjobbet"],
@@ -49,7 +50,8 @@ let hardState = {
 
                 ],
     selectedAnswer: 0,
-    correctAnswers: 0          
+    correctAnswers: 0,
+    answerStat: 0          
     
 }
 
@@ -145,6 +147,15 @@ const correctAnswers = (state = 0, action) => {
     }
 };
 
+const answerStat = (state = 0, action) => {
+    switch(action.type) {
+        case FETCH_ANSWER_SUCCESS:
+            return action.value;
+        default:
+            return state;
+    }
+}
+
 
 
 const quizApp = combineReducers({
@@ -154,6 +165,7 @@ const quizApp = combineReducers({
     questions,
     selectedAnswer,
     correctAnswers,
+    answerStat
 });
 
 export default quizApp;
