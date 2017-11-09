@@ -12,7 +12,7 @@ let hardState = {
             name: "Studenträtt",
             desc: "Hur bra koll har du på vad du som student får och inte får göra? Och hur bra koll har du på vad du måste göra?",
             numberOfQuestions: 6,
-            isFetchingQuiz: true
+            isFetchingQuiz: false
     },
     currentView: "UI_SHOW_FRONT",
     currentQuestion: 0,
@@ -25,8 +25,7 @@ let hardState = {
                         {text: "THS", isCorrect: false}, 
                         {text: "Försäkringskassan", isCorrect: true}],
                 answerText: "Ett läkarintyg och ett prat med försäkringskassan ska räcka, sen löser sig resten (med CSN till exempel) i ett parallellt myndighetsuniversum. Vid förändrad studieplan kan även studievägledaren vara en bra person att hålla kontakten med också.",
-                correctStat: 50,
-                correctIndex: 2
+                correctStat: 50
             }
         },
         {
@@ -103,7 +102,8 @@ let hardState = {
         }
     ],
     selectedAnswer: false,
-    correctAnswers: 0
+    correctAnswers: 0,
+    answersArray: []
 }
 
 
@@ -191,8 +191,17 @@ const currentView = (state = UI.FRONT, action) => {
 const correctAnswers = (state = 0, action) => {
     switch(action.type) {
         case CORRECT_ANSWER:
-            console.log("rätt")
             return state + 1;
+        default:
+            return state;
+    }
+};
+
+const answersArray = (state = [], action) => {
+    switch(action.type) {
+        case INCORRECT_ANSWER:
+        case CORRECT_ANSWER:
+            return [...state, {id: action.id, correct: action.correct}];
         default:
             return state;
     }
@@ -204,7 +213,8 @@ const quizApp = combineReducers({
     currentQuestion,
     questions,
     selectedAnswer,
-    correctAnswers
+    correctAnswers,
+    answersArray
 });
 
 export default quizApp;

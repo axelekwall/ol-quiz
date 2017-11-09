@@ -24,15 +24,15 @@ class Question extends Component {
 				<div key="trans">
 					<div className="display-question">
 						<h2>
-							{this.props.question.text}
+							{this.props.question.data.text}
 							<br/>
-							<center><img src={this.props.question.img} alt=''/></center>
+							<center><img src={this.props.question.data.img} alt=''/></center>
 						</h2>
 						
 					</div>
-					<div className={"answerbuttons answer-options"+this.props.question.alternatives.length}>
-						{this.props.question.alternatives.map((answer, index) => (
-							<button id={"ans" + index} value={index} key={index} onClick={() => {this.props.onClickAnswer(answer.isCorrect)}}>{answer.text}</button>
+					<div className={"answerbuttons answer-options"+this.props.question.data.alternatives.length}>
+						{this.props.question.data.alternatives.map((answer, index) => (
+							<button id={"ans" + index} value={index} key={index} onClick={() => {this.props.onClickAnswer(answer.isCorrect, this.props.question.id)}}>{answer.text}</button>
 						))}
 					</div>
 				</div>

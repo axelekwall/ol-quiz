@@ -9,14 +9,15 @@ const mapStateToProps = state => {
     questions: state.questions,
     selectedAnswer: state.selectedAnswer,
     correctAnswers: state.correctAnswers,
-    currentQuestion: state.currentQuestion
+    currentQuestion: state.currentQuestion,
+    answersArray: state.answersArray
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickAnswer: (correct) => {
-        dispatch(answerQuestion(correct));
+    onClickAnswer: (correct, id) => {
+        dispatch(answerQuestion(correct, id));
     },
     onClickNext: () => {
         dispatch(nextQuestion());

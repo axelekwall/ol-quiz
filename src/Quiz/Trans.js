@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
 import Transition from 'react-motion-ui-pack';
 
-//Component includes 
-//* name of quiz
-//* description text
-//* start button 
-
-//When clicking start user start quiz and is being directed to first question view
-
+// slide in from bottom
 const Trans = ({children}) => (  
     <Transition
     enter={{ opacity: 1, translateY: 0 }}

@@ -46,7 +46,7 @@ class Quiz extends Component {
                             progressLength={this.props.quiz.numberOfQuestions}
                           />
         content = <Question 
-                    question={this.props.questions[this.props.currentQuestion].data} 
+                    question={this.props.questions[this.props.currentQuestion]} 
                     onClickAnswer={this.props.onClickAnswer}
                     img={this.props.questions[this.props.currentQuestion].data.img ? this.props.questions[this.props.currentQuestion].data.img : null }
                   />
@@ -67,6 +67,8 @@ class Quiz extends Component {
                     correctAnswers={this.props.correctAnswers} 
                     numberOfQuestions={this.props.quiz.numberOfQuestions} 
                     number={0}
+                    answersArray = {this.props.answersArray}
+                    name = {this.props.quiz.name}
                   />
         break;
       default:
