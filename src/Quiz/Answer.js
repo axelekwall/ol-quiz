@@ -70,8 +70,10 @@ class Answer extends Component {
           </div>
 
           <div className="answer-info">
-              <h3 style={headingStyle}>Svaret är:</h3>
-              <h2>{this.correctAnswer}</h2>
+              <h3 style={headingStyle}>
+                Rätt svar:<br/>
+                {this.correctAnswer}
+              </h3>
               <p>{this.props.question.answerText}</p>
           </div>
           <div className="next-button-div">

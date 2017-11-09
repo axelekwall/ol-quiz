@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import fetch from 'isomorphic-fetch';
 
 var greeting = "Hurra!";
 var infotext = "Du är klar med quizet"
@@ -7,14 +8,12 @@ class Finished extends Component {
 	constructor(props){
 		super(props)
    	this.state = {number: 0}
-    this.tick = this.tick.bind(this)
     this.interval = 10;
     this.endNumber = 6;
   }
 
   componentDidMount() {
       this.setState({percent: 0 });
-
       this.intervalRun = setInterval(this.tick, this.interval);
   
       if(this.props.correctAnswers >= 4){
@@ -27,14 +26,30 @@ class Finished extends Component {
         greeting = "Inte så bra jobbat!"
         infotext = "Du kanske ska läsa på lite..."
       }
+
+      this.sendData()
   }
 
-  tick(){
+
+  sendData = () => {
+    var payload = {
+      answersArray: this.props.answersArray,
+      correctAnswers: this.props.correctAnswers
+    };
+
+    fetch('/api/result/quiz/'+this.props.quiz.name, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    }).then(
+      console.log(JSON.stringify(payload)),
+      console.log('sent')
+    );
+  }
+
+  tick = () => {
     if(this.state.number < this.endNumber){
         clearInterval(this.intervalRun);
-
         this.interval = this.interval * 1.03;
-
         this.intervalRun = setInterval(this.tick, this.interval);
 
         this.setState({number: this.state.number + 1});

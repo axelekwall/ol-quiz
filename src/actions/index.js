@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
 
 /*
  * action types
@@ -36,14 +36,14 @@ export function setView(view){
     return {type: SET_UI_VIEW, view};
 }
 
-export function answerQuestion(correct) {
+export function answerQuestion(correct, id) {
     //If the answer is correct we return CORRECT_ANSWER & answer
     if(correct){
-        return { type: CORRECT_ANSWER, correct };
+        return { type: CORRECT_ANSWER, correct, id };
     }
     //Else we return INCORRECT_ANSWER & answer
     else{
-        return { type: INCORRECT_ANSWER, correct };
+        return { type: INCORRECT_ANSWER, correct, id };
     }
 }
 export function nextQuestion() {
@@ -72,7 +72,6 @@ function receiveQuiz(json){
 
     };
 }
-
 
 export function fetchQuiz(name) {
     console.log("fetch");
