@@ -114,6 +114,7 @@ const quiz = (state = hardState.quiz, action) => {
                 name: action.quiz.name,
                 desc: action.quiz.desc,
                 numberOfQuestions: action.quiz.numberOfQuestions,
+                id: action.quiz.id,
                 isFetchingQuiz: false
             }
         }
