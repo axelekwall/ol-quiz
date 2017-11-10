@@ -37,7 +37,7 @@ class Finished extends Component {
       correctAnswers: this.props.correctAnswers
     };
 
-    fetch('/api/result/quiz/'+this.props.quiz.name, {
+    fetch('/api/result/quiz/'+this.props.name, {
       method: 'POST',
       body: JSON.stringify(payload)
     }).then(
