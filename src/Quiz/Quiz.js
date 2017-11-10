@@ -68,7 +68,7 @@ class Quiz extends Component {
                     numberOfQuestions={this.props.quiz.numberOfQuestions} 
                     number={0}
                     answersArray = {this.props.answersArray}
-                    name = {this.props.quiz.name}
+                    id = {this.props.quiz.id}
                   />
         break;
       default:

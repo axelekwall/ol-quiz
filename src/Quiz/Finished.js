@@ -37,7 +37,7 @@ class Finished extends Component {
       correctAnswers: this.props.correctAnswers
     };
 
-    fetch('/api/result/quiz/'+this.props.name, {
+    fetch('/api/result/quiz/'+this.props.id, {
       method: 'POST',
       body: JSON.stringify(payload)
     }).then(
@@ -63,7 +63,7 @@ class Finished extends Component {
   render(){
 		return(
 			<div id="finished-view">
-    			<h2>Du fick rätt på {this.props.correctAnswers}/6 frågor</h2>
+    			<h2>Du fick rätt på {this.props.correctAnswers}/{this.props.numberOfQuestions} frågor</h2>
           <h1>{greeting}</h1>
           <p>{infotext}</p>
     	
