@@ -38,12 +38,13 @@ class Finished extends Component {
     };
 
     fetch('/api/result/quiz/'+this.props.id, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       method: 'POST',
       body: JSON.stringify(payload)
-    }).then(
-      console.log(JSON.stringify(payload)),
-      console.log('sent')
-    );
+    });
   }
 
   tick = () => {
