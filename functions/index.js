@@ -31,7 +31,7 @@ router.post('/result/quiz/:name', (req, res) => {
     });
   }).then((newTotal) => {
     const transactions = [];
-    req.body.answersArray.forEach((answer) => {
+    result.answersArray.forEach((answer) => {
       transactions.push(
         db.runTransaction((t) => {
           const questionRef = quizRef.collection('questions').doc(answer.id);

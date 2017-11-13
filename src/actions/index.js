@@ -59,13 +59,10 @@ export function finishQuiz(){
 }
 
 function requestQuiz() {
-    console.log("request");
     return { type: FETCH_QUIZ_REQUEST };
 }
 
 function receiveQuiz(json){
-    console.log("receive");
-    console.log(json);
     return {
         type: FETCH_QUIZ_SUCCESS,
         quiz: json
@@ -74,7 +71,6 @@ function receiveQuiz(json){
 }
 
 export function fetchQuiz(name) {
-    console.log("fetch");
     return dispatch => {
       dispatch(requestQuiz());
 
