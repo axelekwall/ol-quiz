@@ -1,6 +1,8 @@
 html {
   height: 100%;
   box-sizing: border-box;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 *,
@@ -23,6 +25,8 @@ body {
   background-repeat:  no-repeat;
   background-attachment: fixed;
   background-size:  cover;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 @font-face {
@@ -37,18 +41,21 @@ body {
 
 h1, h2{
 	font-family: "Museo Slab 900";
+	font-weight: 900;
 }
 
 h2{
-	font-size:1.7rem;
+	font-size: 1.5em;
 }
 
 p{
 	font-family: "Chaparral Pro Regular";
+	font-size: 1.1em;
 }
 
+/*Containing the progress bar */
 .App-header{
-	height: 50px;
+	height: 30px;
 }
 
 /* KOLLA ÖVER BREDD*/
@@ -63,13 +70,13 @@ p{
 	right:0;
 	left:0;
 	bottom:1rem;
-	margin-top:15%;
 }
 
 .footer h3{
 	font-family: "Museo Slab 900";
+	font-weight: 900;
 	color:white;
-	font-size:2rem;
+	font-size:2em;
 	padding:0;
 	margin:0;
 }
@@ -77,13 +84,12 @@ p{
 .footer p{
 	font-family: "Proxima Nova";
 	color: rgba(255, 255, 255, 0.7);
-	font-size:0.7rem;
+	font-size:0.7em;
 	padding:0;
 	margin:0;
 }
 
-/* FRONT VIEW */ 
-
+/* ------- FRONT VIEW ---------*/ 
 .front-view-container{
 	text-align: center;
 	background-position: center center;
@@ -106,7 +112,7 @@ p{
 }
 
 .front-view-content h1{
-	font-size:4.5em;
+	font-size: 4.5em;
 	text-align: right;
 	padding-left:2%;
 	margin-bottom: 10px;
@@ -130,9 +136,9 @@ p{
 	opacity: 1;
 	background-color: rgb(238,81,46);
     color: white;
-    height: 40px;
-    width: 100px;
-    font-size: 18px;
+    height: 50px;
+    width: 140px;
+    font-size: 1.1em;
     border: none;
     border-radius: 5px;
     font-family: "Chaparral Pro Regular";
@@ -153,8 +159,7 @@ p{
 	}
 }
 
-/*ANSWER SECTION */
-
+/*--------- ANSWER SECTION -----------*/
 .answer-content{
   	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -165,21 +170,21 @@ p{
       	"answerStatisticsText answerInfo"
       	". nextQuestionButton";
 }
-
 .answer-content p{
-	font-size: 16px;
+	font-size: 1.1em;
 	margin-top:50px;
 }
 
 .answer-content h1{
 	margin:0;
-	font-size: 120px;
+	font-size: 6em;
 }
 
 .answer-content h3{
-	font-size: 30px;
+	font-size: 3em;
 	margin:0;
-	font-family: "Museo Slab 900"
+	font-family: "Museo Slab 900";
+	font-weight: 900;
 }
 
 .answer-content h4{
@@ -191,8 +196,8 @@ p{
 	background-color: rgb(238,81,46);
 	color: white;
 	height: 50px;
-	width: 150px;
-	font-size: 22px;
+    width: 140px;
+	font-size: 1.1em;
 	border: none;
 	border-radius: 5px;
 	font-family: "Chaparral Pro Regular";
@@ -223,19 +228,14 @@ p{
 
 @media (max-width: 720px) {
 	.answer-content p{
-		font-size: 15px;
-		margin-top:20px;
-	}
-	.answer-content h1{
-		font-size: 80px;
+		margin-top: 15px;
 	}	
 	.answer-content h3{
-		font-size: 40px;
-		font-family: "Museo Slab 900"
+		font-family: "Museo Slab 900";
+		font-weight: 900;
 	}
 
 	.answer-content h4{
-		font-size: 20px;
 		font-weight: 500;
 	}
 
@@ -253,27 +253,25 @@ p{
 
 	.answer-statistics{
 		margin-right: 20px;
-		margin-top: 25px;
+		margin-top: 5px;
 	}
 
 	.answer-statistics-text{
 		margin-right: 25px;
-		margin-top: 25px;
+		margin-top: 5px;
 	}
 
 	.next-button-div{
 		margin-right: 25px;
-		margin-top: 60px;
+		margin-top: 10px;
 	}
 
 	.next-question-button{
 		height: 40px;
 		width: 120px;
-		font-size: 20px;
+		font-size: 1.1em;
 	}
-
 }
-
 /*END OF ANSWER SECTION*/
 
 
@@ -285,7 +283,7 @@ p{
 .answer-options2{
 	display: grid;
 	grid-template-columns: repeat(2);
-	grid-gap: 25px;
+	grid-gap: 15px;
 	grid-auto-rows: minmax(100px, auto);
 	grid-auto-columns: minmax(200px, auto);
 }
@@ -303,7 +301,7 @@ p{
 .answer-options3{
 	display: grid;
 	grid-template-columns: repeat(3);
-	grid-gap: 25px;
+	grid-gap: 15px;
 	grid-auto-rows: minmax(100px, auto);
 	grid-auto-columns: minmax(200px, auto);
 }
@@ -326,7 +324,7 @@ p{
 .answer-options4{
 	display: grid;
 	grid-template-columns: repeat(3);
-	grid-gap: 20px;
+	grid-gap: 15px;
 	grid-auto-rows: minmax(100px, auto);
 	grid-auto-columns: minmax(200px, auto);
 }
@@ -358,7 +356,7 @@ p{
 	text-align: center;
 	color:white;
 	font-family: "Chaparral Pro Regular";
-	font-size:1rem;
+	font-size:1.1em;
 	font-weight: bold;
 	width: 5rem*10vw;
 	border-radius:5px;
@@ -366,7 +364,10 @@ p{
 
 @media (max-width:720px){
 	.display-question{
-		margin: 2rem;
+		margin-left: 2em;
+    	margin-right: 2em;
+    	margin-bottom: -20px;
+    	margin-top: 2em;
 	}
 
 	.answer-options2{
@@ -374,8 +375,8 @@ p{
 		grid-template-columns: repeat(1);
 		grid-template-rows:2;
 		grid-auto-rows: minmax(70px, auto);
-		margin-left:2rem;
-		margin-right:2rem;
+		margin-left:2em;
+		margin-right:2em;
 	}
 
 	.answer-options2 #ans0{
@@ -392,7 +393,7 @@ p{
 		display: grid;
 		grid-template-columns: repeat(1);
 		grid-template-rows:3;
-		grid-auto-rows: minmax(70px, auto);
+		grid-auto-rows: minmax(60px, auto);
 		margin-left:2rem;
 		margin-right:2rem;
 	}
@@ -453,6 +454,7 @@ p{
 	height: 50px;
 	margin-left: 20%;
 }
+
 .ProgressSteps {
 	display: block;
 }
@@ -494,6 +496,16 @@ p{
   /* ... */
 	    
 }
+/*Very small phones */
+@media (max-width: 320px){
+	.front-view-content h1 {
+	    font-size: 3.2em;
+	}
+	.ProgressSteps-Line {
+		width: 8% !important;
+	}
+}
+
 
 @media (max-width:720px){
 
