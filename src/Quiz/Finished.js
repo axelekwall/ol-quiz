@@ -15,37 +15,42 @@ class Finished extends Component {
   componentDidMount() {
       this.setState({percent: 0 });
       this.intervalRun = setInterval(this.tick, this.interval);
-  
-      if(this.props.correctAnswers >= 4){
-        greeting = "Grymt jobbat!"
-        infotext = "Du behöver inte oroa dig för något, du har koll på allt du behöver."
-      }else if(this.props.correctAnswers > 2){
-        greeting = "Det där gick ju helt okej!"
-        infotext = "Du har ju ganska bra koll ändå."
+
+      if(this.props.userScore >= 25){
+        greeting = "Du blev profil nr 4"
+        infotext = "Tralalalla info"
+      }else if(this.props.userScore >= 17){
+        greeting = "Du blev profil nr 2"
+        infotext = "Tralalalla info"
+      }else if(this.props.userScore >= 9){
+        greeting = "Du blev profil nr 2"
+        infotext = "Tralalalla info"
       }else{
-        greeting = "Inte så bra jobbat!"
-        infotext = "Du kanske ska läsa på lite..."
+        greeting = "Du blev profil nr 1"
+        infotext = "Tralalalla info"
       }
 
       this.sendData()
   }
 
 
-  sendData = () => {
-    var payload = {
-      answersArray: this.props.answersArray,
-      correctAnswers: this.props.correctAnswers
-    };
+// We skip sending data to Firebase. We do not have an answersArray anymore... 
+  // sendData = () => {
+  //   var payload = {
+  // If we wanna send something, this is where we add what we want to send.
+  //     answersArray: this.props.answersArray,
+  //     correctAnswers: this.props.correctAnswers
+  //   };
 
-    fetch('/api/result/quiz/'+this.props.id, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify(payload)
-    });
-  }
+  //   fetch('/api/result/quiz/'+this.props.id, {
+  //     headers: {
+  //       'Accept': 'application/json',
+  //       'Content-Type': 'application/json'
+  //     },
+  //     method: 'POST',
+  //     body: JSON.stringify(payload)
+  //   });
+  // }
 
   tick = () => {
     if(this.state.number < this.endNumber){
@@ -64,7 +69,7 @@ class Finished extends Component {
   render(){
 		return(
 			<div id="finished-view">
-    			<h2>Du fick rätt på {this.props.correctAnswers}/{this.props.numberOfQuestions} frågor</h2>
+    			<h2>Du fick {this.props.userScore} poäng</h2>
           <h1>{greeting}</h1>
           <p>{infotext}</p>
     	

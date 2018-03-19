@@ -1,3 +1,5 @@
+// DENNA ANVÄNDS INTE ALLS
+
 import React, {Component} from 'react';
 
 import { tada, shake } from 'react-animations'

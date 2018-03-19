@@ -8,24 +8,10 @@ import {UI} from "../actions"
 
 class Quiz extends Component {
 
-  // Arrow-funktion, behöver inte binda this
-  nextQuestion = (e) => {
-    //OM DET FINNS FLER FRÅGOR 
-    if(this.props.questions.length >= (this.props.currentQuestion+2)){
-      //ACTION - NÄSTA FRÅGA 
-      this.props.onClickNext()
-    } else {
-      // SHOW FINISHED VIEW
-      this.props.onFinishQuiz()
-      //this.setState({currentView: "UI_SHOW_SUMMARY"});
-    }
-  }
-
   componentWillMount(){
-
     // FETCH STUDENT RIGHTS QUIZ
     // SHOULD BE IN THE ROUTER IN FUTURE, AND PROBABLY NOT HERE
-    this.props.onClickFetch("studentrights");
+  //  this.props.onClickFetch("studentrights");
   }
 
   render() {
@@ -49,6 +35,8 @@ class Quiz extends Component {
                     question={this.props.questions[this.props.currentQuestion]} 
                     onClickAnswer={this.props.onClickAnswer}
                     img={this.props.questions[this.props.currentQuestion].data.img ? this.props.questions[this.props.currentQuestion].data.img : null }
+                    questions = {this.props.questions}
+                    onFinishQuiz = {this.props.onFinishQuiz} 
                   />
         break;
       case UI.ANSWER: 
@@ -56,19 +44,18 @@ class Quiz extends Component {
                             progressCount={this.props.currentQuestion+1} 
                             progressLength={this.props.quiz.numberOfQuestions}
                           />
-        content = <Answer 
-                    question={this.props.questions[this.props.currentQuestion].data} 
-                    onClick={this.nextQuestion} 
-                    selectedAnswer = {this.props.selectedAnswer}
-                  />
+        // content = <Answer 
+        //             question={this.props.questions[this.props.currentQuestion].data} 
+        //             onClick={this.nextQuestion} 
+        //             selectedAnswer = {this.props.selectedAnswer}
+        //           />
         break;
       case UI.SUMMARY: 
         content = <Finished 
-                    correctAnswers={this.props.correctAnswers} 
                     numberOfQuestions={this.props.quiz.numberOfQuestions} 
                     number={0}
-                    answersArray = {this.props.answersArray}
                     id = {this.props.quiz.id}
+                    userScore = {this.props.userScore}
                   />
         break;
       default:

@@ -7,17 +7,16 @@ const mapStateToProps = state => {
     quiz: state.quiz,
     currentView: state.currentView,
     questions: state.questions,
-    selectedAnswer: state.selectedAnswer,
-    correctAnswers: state.correctAnswers,
     currentQuestion: state.currentQuestion,
-    answersArray: state.answersArray
+    userScore: state.userScore
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickAnswer: (correct, id) => {
-        dispatch(answerQuestion(correct, id));
+    // changed to score instead of correct/incorrect
+    onClickAnswer: (score, id) => {
+        dispatch(answerQuestion(score, id));
     },
     onClickNext: () => {
         dispatch(nextQuestion());

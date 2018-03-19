@@ -11,7 +11,20 @@ import Transition from 'react-motion-ui-pack';
 
 //Style för animation
 class Question extends Component {
+  constructor(props){
+    super(props);
+    this.answer = this.answer.bind(this);
+  }
 
+	answer (score, id) {
+		console.log("IN FUNCTION")
+		if(this.props.questions[this.props.questions.length-1] == this.props.question){
+			this.props.onFinishQuiz()
+		}else{
+			this.props.onClickAnswer(score, id)
+		}
+
+	}
 	
   render() {
   	return(
@@ -32,7 +45,7 @@ class Question extends Component {
 					</div>
 					<div className={"answerbuttons answer-options"+this.props.question.data.alternatives.length}>
 						{this.props.question.data.alternatives.map((answer, index) => (
-							<button id={"ans" + index} value={index} key={index} onClick={() => {this.props.onClickAnswer(answer.isCorrect, this.props.question.id)}}>{answer.text}</button>
+							<button id={"ans" + index} value={index} key={index} onClick={() => {this.answer(answer.score, this.props.question.id)}}>{answer.text}</button>
 						))}
 					</div>
 				</div>
