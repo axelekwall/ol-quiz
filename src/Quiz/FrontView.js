@@ -42,9 +42,6 @@ class FrontView extends Component {
           <h1>{this.props.quiz.name}</h1>
           <p>
             {this.props.quiz.desc}
-            <br/>
-            <br/>
-            Ta Osqledarens quiz och testa dina kunskaper!
           </p>
           <button className="start-button"onClick={e => {this.props.onClick()}}>Starta quiz</button>
         </div>

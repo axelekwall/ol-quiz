@@ -20,7 +20,10 @@ body {
   min-height: 100%;
   position:relative;
   padding-bottom:6rem;
-  background-image:url(./Assets/Images/Olof_Palme_1968_dark.jpg);
+  background-color: #6fcad3;
+
+  /* ADD BACKGROUND FOR QUESTIONS HERE */ 
+  /* background-image:url(./Assets/Images/Olof_Palme_1968_dark.jpg); */ 
   background-position: center center;
   background-repeat:  no-repeat;
   background-attachment: fixed;
@@ -29,6 +32,19 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+/* JÄMSTÄLLDHETSVECKANS FONTER */ 
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('./Assets/Fonts/Bebas/BEBAS.ttf') format('truetype');
+  }
+
+@font-face {
+    font-family: "Avenir Next Ultra Light";
+    src: url(./Assets/Fonts/AvenirNext-UltraLight.otf);
+}
+/* ----------------------------*/ 
+
+/* OLs FONTER */
 @font-face {
     font-family: "Museo Slab 900";
     src: url(./Assets/Fonts/Museo_Slab_900.otf);
@@ -39,17 +55,20 @@ body {
 	src: url(./Assets/Fonts/ChaparralPro-Regular.otf);
 }
 
-h1, h2{
-	font-family: "Museo Slab 900";
+
+h1{
+	font-family: "Bebas Neue";
 	font-weight: 900;
 }
 
 h2{
-	font-size: 1.5em;
+	font-family: "Avenir Next Ultra Light";
+	text-align: center;
+	font-size: 1.3em;
 }
 
 p{
-	font-family: "Chaparral Pro Regular";
+	font-family: "Avenir Next Ultra Light";
 	font-size: 1.1em;
 }
 
@@ -101,7 +120,10 @@ p{
 	left:0;
 	top:0;
 	bottom:0;
-	background-image: url("Assets/Images/Olof_Palme_1968.jpg");
+	
+	/* CHANGE TO OTHER BACKGROUND HERE */
+	background-color: #6fcad3;
+	/* background-image: url("Assets/Images/Olof_Palme_1968.jpg");*/ 
 }
 
 .front-view-content{
@@ -113,35 +135,38 @@ p{
 
 .front-view-content h1{
 	font-size: 4.5em;
-	text-align: right;
-	padding-left:2%;
+	text-align: left;
+	padding-left:7%;
 	margin-bottom: 10px;
 }
 
 .front-view-content p{
 	text-align: left;
 	font-size: 1em;
-	padding-left:15%;
+	padding-left:7%;
 	padding-top:1%;
 	padding-bottom:1%;
 	padding-right:2%;
 	margin-bottom: 5%;
 	margin-top: 0px;
 	left:0;
-	background-color: rgba(51, 51, 51, 0.9);
+	color: white;
+	
+	/* background-color: rgba(111, 202, 211, 0.9); */ 
 	width: 100%;
 }
 
 .start-button{
 	opacity: 1;
-	background-color: rgb(238,81,46);
-    color: white;
+	background-color: #c4edf0;
+	/* background-color: rgb(238,81,46); */ 
+    color: #445253;
     height: 50px;
     width: 140px;
     font-size: 1.1em;
     border: none;
     border-radius: 5px;
-    font-family: "Chaparral Pro Regular";
+    font-family: "Avenir Next Ultra Light";
     margin-top: 5%;
 }
 
@@ -183,13 +208,13 @@ p{
 .answer-content h3{
 	font-size: 3em;
 	margin:0;
-	font-family: "Museo Slab 900";
+	font-family: "Bebas Neue";
 	font-weight: 900;
 }
 
 .answer-content h4{
 	margin:0;
-	font-family: "Chaparral Pro Regular";
+	font-family: "Avenir Next Ultra Light";
 }
 
 .next-question-button{
@@ -200,7 +225,7 @@ p{
 	font-size: 1.1em;
 	border: none;
 	border-radius: 5px;
-	font-family: "Chaparral Pro Regular";
+	font-family: "Avenir Next Ultra Light";
 	font-weight: bold;
 	font-size: 
 }
@@ -231,7 +256,7 @@ p{
 		margin-top: 15px;
 	}	
 	.answer-content h3{
-		font-family: "Museo Slab 900";
+		font-family: "Bebas Neue";
 		font-weight: 900;
 	}
 
@@ -277,7 +302,11 @@ p{
 
 /*-------- QUIZ QUESTION AND OPTIONS ------------*/
 .answerbuttons button:hover{
-	background-color: rgba(238, 81, 46, 0.9);
+
+	/* HOVER FÄRG PÅ SVARSKNAPPAR */ 
+	background-color: white;
+	
+	/* background-color: rgba(238, 81, 46, 0.9); */ 
 }
 
 .answer-options2{
@@ -351,11 +380,13 @@ p{
 
 .answer-options2 button, .answer-options3 button, .answer-options4 button{
 	min-height:8rem;
-	background-color: rgb(238, 81, 46);
+	background-color: #c4edf0;
+	color: #445253;
+	padding: 20px;
+	/* background-color: rgb(238, 81, 46); */ 
 	border:none;
 	text-align: center;
-	color:white;
-	font-family: "Chaparral Pro Regular";
+	font-family: "Avenir Next Ultra Light";
 	font-size:1.1em;
 	font-weight: bold;
 	width: 5rem*10vw;
@@ -452,7 +483,7 @@ p{
 
 .prog-bar{
 	height: 50px;
-	margin-left: 20%;
+	margin-left: 10%;
 }
 
 .ProgressSteps {
@@ -460,7 +491,8 @@ p{
 }
 
 .ProgressSteps-Step {
-	background: rgb(102, 102, 102); 
+	background: white; 
+	/* background: rgb(102, 102, 102); */
 	border-radius: 50px; 
 	float: left; 
 	height: 27px; 
@@ -468,7 +500,9 @@ p{
 }
 
 .ProgressSteps-Step-activated {
-  background: rgb(238,81,46);
+
+	background: #c4edf0; 
+ /*  background: rgb(238,81,46); */
 }
  
 .ProgressSteps-Step-deactivated {
@@ -476,11 +510,13 @@ p{
 }
  
 .ProgressSteps-Step-current {
- background: rgb(238,81,46);
+	background: #c4edf0; 
+ /* background: rgb(238,81,46); */ 
 }  
 
 .ProgressSteps-Line {
-	background: rgb(102, 102, 102);
+	background: white; 
+	/* background: rgb(102, 102, 102); */
     float: left;
     height: 8px;
     position: relative;
@@ -489,7 +525,8 @@ p{
 }
 
 .ProgressSteps-Line-activated {
-  background: rgb(238,81,46);
+	background: #c4edf0; 
+  /* background: rgb(238,81,46); */
 }
 	 
 .ProgressSteps-Line-deactivated {
@@ -527,7 +564,7 @@ p{
 
 a{
 	color: rgb(238,81,46);
-	font-family: "Chaparral Pro Regular";
+	font-family: "Avenir Next Ultra Light";
 }
 
 #link-to-ol{

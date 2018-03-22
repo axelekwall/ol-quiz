@@ -30,7 +30,7 @@ class Finished extends Component {
         infotext = "Tralalalla info"
       }
 
-      this.sendData()
+     // this.sendData()
   }
 
 
