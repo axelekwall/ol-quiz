@@ -491,7 +491,7 @@ p{
 }
 
 .ProgressSteps-Step {
-	background: white; 
+	background: #c4edf0; 
 	/* background: rgb(102, 102, 102); */
 	border-radius: 50px; 
 	float: left; 
@@ -501,7 +501,7 @@ p{
 
 .ProgressSteps-Step-activated {
 
-	background: #c4edf0; 
+	background: white; 
  /*  background: rgb(238,81,46); */
 }
  
@@ -510,12 +510,12 @@ p{
 }
  
 .ProgressSteps-Step-current {
-	background: #c4edf0; 
+	background: white; 
  /* background: rgb(238,81,46); */ 
 }  
 
 .ProgressSteps-Line {
-	background: white; 
+	background: #c4edf0; 
 	/* background: rgb(102, 102, 102); */
     float: left;
     height: 8px;
@@ -525,7 +525,7 @@ p{
 }
 
 .ProgressSteps-Line-activated {
-	background: #c4edf0; 
+	background: white; 
   /* background: rgb(238,81,46); */
 }
 	 
