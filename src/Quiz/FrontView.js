@@ -39,6 +39,7 @@ class FrontView extends Component {
         component={false}
       >
         <div className="front-view-content" key="trans">
+          <img id="jsv-logga-bild" src="./static/logga-jsv.jpg"/>
           <h1>{this.props.quiz.name}</h1>
           <p>
             {this.props.quiz.desc}

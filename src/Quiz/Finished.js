@@ -17,17 +17,29 @@ class Finished extends Component {
       this.intervalRun = setInterval(this.tick, this.interval);
 
       if(this.props.userScore >= 25){
-        greeting = "Du blev profil nr 4"
-        infotext = "Tralalalla info"
-      }else if(this.props.userScore >= 17){
-        greeting = "Du blev profil nr 2"
-        infotext = "Tralalalla info"
-      }else if(this.props.userScore >= 9){
-        greeting = "Du blev profil nr 2"
-        infotext = "Tralalalla info"
-      }else{
-        greeting = "Du blev profil nr 1"
-        infotext = "Tralalalla info"
+        greeting = "Emma Watson"
+        infotext = `Wow! You are an ICON for women and have inspired many people, including Malala Yousafzai to call themselves feminists. 
+
+        With your countless speeches, campaigns and hard work for gender equality, you certainly stand up for women in a wide variety of ways. 
+        
+        “We need to live in a culture that values and respects and looks up and idolizes women as much as men”`
+      }
+      else if(this.props.userScore >= 17){
+        greeting = "Magnus Betnér"
+        infotext = `A man who is a feminist? What is this sorcery? 
+                    
+                  You think that biologically, humans only need to eat, reproduce and go to the WC. Gender is just a social construction, shaped by the society and culture that we are all part of maintaining. You say that the solution to inequality is that men realise that they are the problem, and you then try to fix it. 
+        
+                  You work in an environment that is generally not really open to these kind of questions, or women in general, but you are still not beating around the bush. `
+
+      }
+      else if(this.props.userScore >= 9){
+        greeting = "Penny Schulman"
+        infotext = "You do not know very much about feminism, in fact you have just finished pre-school, but you do believe that boys are trash and “TJEJER E BÄST!”"
+      }
+      else{
+        greeting = "Alexander Bard"
+        infotext = "You think that the swedish #metoo movement is a hoax which has gone way to far. Women are neither more exposed to inequality than men, nor underprivileged. Women just need to get their shit together and carry on."
       }
 
      // this.sendData()
@@ -69,12 +81,23 @@ class Finished extends Component {
   render(){
 		return(
 			<div id="finished-view">
-    			<h2>Du fick {this.props.userScore} poäng</h2>
+    			<h2>Congratulations! <br/> <br/> Your feminists icon is...</h2>
           <h1>{greeting}</h1>
           <p>{infotext}</p>
+          
     	
           <div id="link-to-ol">
-            <a href="http://www.osqledaren.se" >Till Osqledaren.se</a>
+            <p>Jämställdhetsveckan starts the 16th April and finishes the 20th April. Check us, and our events, out and learn more about gender equality to either change your score or just for your enjoyment!</p>
+            <p>Följ oss på: 
+              <br/>
+            <a href="https://www.facebook.com/Jamstalldhetsveckan/">Facebook</a>
+            <br/>
+            <a href="http://instagram.com/jamstalldhetsveckan">Instagram</a>
+            <br/>
+            <a href="https://www.linkedin.com/company/10321330/">LinkedIn</a>
+            <br/>
+            <a href="http://www.jamstalldhetsveckan.se/">Jämställdhetsveckan.se</a>
+            </p>
           </div>		
   		</div>
 		)
