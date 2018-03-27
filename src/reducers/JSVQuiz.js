@@ -12,7 +12,7 @@ import { FETCH_QUIZ_REQUEST,FETCH_QUIZ_SUCCESS,NEXT_QUESTION,UI,FINISH_QUIZ,STAR
 let hardState = {
 
     quiz: {
-            name: "Feminist Quiz",
+            name: "(Non?) Feminist Quiz",
             desc: `Welcome to this supercalifragilisticexpialidocious quiz made by Jämställdhetsveckan in 
             collaboration with Osqledaren! Answer some quick questions and find out which feminist 
             (or non-feminist) profile you are most similar to.But beware, we do not guarantee your 
@@ -26,23 +26,23 @@ let hardState = {
         {
             id: "quest1",
             data: {
-                text: "Which of the following do you think is the biggest factor keeping women from achieving full equality with men?",
-                alternatives: [  {text: "Their own choices", score: 1},
-                        {text: "Discrimination against women", score: 2}, 
-                        {text: "Being a woman", score: 0},
-                        {text: "Society’s view on equality of women and men", score: 3}],
+                text: "Which of the following do you think is the main reason for women’s inequality?",
+                alternatives: [  {text: "Women’s own choices", score: 2},
+                        {text: "Discrimination against women", score: 3}, 
+                        {text: "Women", score: 1},
+                        {text: "Society’s view on equality of women and men", score: 4}],
                 answerText: "...",
             }
         },
         {
             id: "quest2",
             data: {
-                text: "What do you think about stay-at home dads?",
+                text: "What is your opinion about stay-at home dads?",
                 alternatives: [
-                    {text: "What about them?", score: 3}, 
-                    {text: "They are very sweet and adorable", score: 1}, 
-                    {text: "It is just weird and not normal", score: 0},
-                    {text: "It is very positive that they are accepted in society", score: 2}],
+                    {text: "What about them?", score: 4}, 
+                    {text: "They are very sweet and adorable", score: 2}, 
+                    {text: "It is just weird and not normal", score: 1},
+                    {text: "It is very positive that they are accepted in society nowadays", score: 3}],
                 answerText: "..."
             }
         },
@@ -52,9 +52,9 @@ let hardState = {
                 text: "You are in a group and someone makes a sexist joke, what do you do?",
                 alternatives: [
                     {text: "Nothing, I don’t want them to see me as boring.", score: 1},
-                    {text: "I laugh even if I don’t see the fun in it.", score: 0},
-                    {text: "I try to take a stand and say something like; That’s not okay.", score: 3},
-                    {text: "I don’t see a problem with the friend making that joke. It’s just a joke.", score: 2}
+                    {text: "I laugh even if I don’t see the fun in it.", score: 1},
+                    {text: "I try to take a stand and say something like; That’s not okay.", score: 4},
+                    {text: "I don’t see a problem with the friend making that joke. It’s just a joke.", score: 1}
                 ],
                 answerText: "..."
             },
@@ -62,12 +62,12 @@ let hardState = {
         {
             id: "quest4",
             data: {
-                text: "You walk into public transportation and you see a mother breastfeeding her child. What do you do/think?",
+                text: "You walk into public transportation and you see a mother breastfeeding her child. What is your reaction?",
                 alternatives: [
-                    {text: "This should not be allowed in public. It is provocative.", score: 1}, 
-                    {text: "Ohhh! What a cute baby!!", score: 3},
-                    {text: "You ask her to cover her nakedness.", score: 0},
-                    {text: "You go sit beside her and start talking to her.", score: 2}
+                    {text: "This should not be allowed in public. It is provocative.", score: 2}, 
+                    {text: "Ohhh! What a cute baby!!", score: 4},
+                    {text: "You ask her to cover her nakedness.", score: 1},
+                    {text: "You go sit beside her and start talking to her.", score: 3}
                 ],
                 answerText: "..."
             },
@@ -75,12 +75,12 @@ let hardState = {
         {
             id: "quest5",
             data: {
-                text: "The swedish male handball team decreased salary so that the female team could get equal pay. What is your first reaction?",
+                text: "In 2017, the swedish male handball team decreased their salary so that the female and male team could have equal pay. What are your thoughts about this?",
                 alternatives: [
-                    {text: "They are heroes", score: 2},
-                    {text: "That is just right, why should the women get less?", score: 3},
-                    {text: "Who watches women’s handball?", score: 0},
-                    {text: "Who cares?", score: 1}
+                    {text: "Great job by the guys! Equal work should result in equal pay!", score: 3},
+                    {text: "This should be done in every sport, women deserve the same salary as men.", score: 4},
+                    {text: "Who watches women’s handball?", score: 1},
+                    {text: "Who cares?", score: 2}
                 ],
                 answerText: "...",
                 img: "..."
@@ -89,12 +89,12 @@ let hardState = {
         {
             id: "quest6",
             data: {
-                text: "A young couple is driving in the car. Who do you imagine in the driver seat?",
+                text: "A young couple is driving a car. Who do you imagine in the driver seat?",
                 alternatives: [
-                    {text: "The woman", score: 1},
-                    {text: "The man", score: 0},
-                    {text: "Anyone who is allowed to drive", score: 2},
-                    {text: "The better driver", score: 3}
+                    {text: "The woman", score: 2},
+                    {text: "The man", score: 1},
+                    {text: "Anyone who is allowed to drive", score: 3},
+                    {text: "The better driver", score: 4}
                 ],
                 answerText: "..."
             }
@@ -102,12 +102,12 @@ let hardState = {
         {
             id: "quest7",
             data: {
-                text: "Do you find it weird that women and men are not paid equally?",
+                text: "Do you find it strange that women and men are not paid equally?",
                 alternatives: [
-                    {text: "No, they should choose better jobs if they want a higher salary.", score: 1},
-                    {text: "Yes, if they do the same job.", score: 2},
-                    {text: "Women should stay are home and take care of the children.", score: 0},
-                    {text: "Yes, it is an example of how society values women less than men.", score: 3}
+                    {text: "No, they should choose better jobs if they want a higher salary.", score: 2},
+                    {text: "Yes, if they do the same job.", score: 3},
+                    {text: "Women should stay are home and take care of the children.", score: 1},
+                    {text: "Yes, it is an example of how society values women less than men.", score: 4}
                 ],
                 answerText: "..."
             }
@@ -117,10 +117,10 @@ let hardState = {
             data: {
                 text: "Do you think that it is a problem that less women than men choose to become engineers?",
                 alternatives: [
-                    {text: "No, men are more interested in technology and women are more interested in soft things. It’s natural.", score: 1},
-                    {text: "Yes, more women engineers would help bring new perspectives into the industry.", score: 2},
-                    {text: "Yes, it is an important step in showing that women are just as competent as men and should be able to take leading positions without anyone questioning it.", score: 3},
-                    {text: "No, generally women does not have what it takes and should do what they are good at.", score: 0}
+                    {text: "No, men are more interested in technology and women are more interested in soft things. It’s natural.", score: 2},
+                    {text: "Yes, more women engineers would help bring new perspectives into the industry.", score: 3},
+                    {text: "Yes. There are no reasons why more women shouldn’t feel like they can become engineers. Interests and competence aren’t gender specific things.", score: 4},
+                    {text: "No, generally women does not have what it takes and should do what they are good at.", score: 1}
                 ],
                 answerText: "..."
             }
