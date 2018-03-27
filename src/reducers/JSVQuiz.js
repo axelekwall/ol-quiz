@@ -82,8 +82,7 @@ let hardState = {
                     {text: "Who watches women’s handball?", score: 1},
                     {text: "Who cares?", score: 2}
                 ],
-                answerText: "...",
-                img: "..."
+                answerText: "..."
             }
         },
         {
