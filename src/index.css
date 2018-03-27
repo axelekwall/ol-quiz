@@ -38,10 +38,6 @@ body {
 	src: url('./Assets/Fonts/Bebas/BEBAS.ttf') format('truetype');
   }
 
-@font-face {
-    font-family: "Avenir Next Ultra Light";
-    src: url(./Assets/Fonts/AvenirNext-UltraLight.otf);
-}
 /* ----------------------------*/ 
 
 /* OLs FONTER */
@@ -62,13 +58,13 @@ h1{
 }
 
 h2{
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 	text-align: center;
 	font-size: 1.3em;
 }
 
 p{
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 	font-size: 1.1em;
 }
 
@@ -167,7 +163,7 @@ p{
     font-size: 1.1em;
     border: none;
     border-radius: 5px;
-    font-family: "Avenir Next Ultra Light";
+    font-family: "Lato";
     margin-top: 5%;
 }
 
@@ -214,7 +210,7 @@ p{
 
 .answer-content h4{
 	margin:0;
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 }
 
 .next-question-button{
@@ -225,7 +221,7 @@ p{
 	font-size: 1.1em;
 	border: none;
 	border-radius: 5px;
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 	font-weight: bold;
 	font-size: 
 }
@@ -386,7 +382,7 @@ p{
 	/* background-color: rgb(238, 81, 46); */ 
 	border:none;
 	text-align: center;
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 	font-size:1.1em;
 	font-weight: bold;
 	width: 5rem*10vw;
@@ -566,11 +562,11 @@ p{
 
 a{
 	color: #445253;
-	font-family: "Avenir Next Ultra Light";
+	font-family: "Lato";
 }
 
 #link-to-ol{
-	margin-top: 10%;
+	margin-top: 5%;
 	margin-left: 10px;
 	margin-right: 10px;
 }

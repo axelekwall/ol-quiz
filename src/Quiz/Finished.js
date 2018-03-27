@@ -25,7 +25,7 @@ class Finished extends Component {
         “We need to live in a culture that values and respects and looks up and idolizes women as much as men”`
       }
       else if(this.props.userScore >= 17){
-        greeting = "Magnus Betnér"
+        greeting = "Magnus Betner"
         infotext = `A man who is a feminist? What is this sorcery? 
                     
                   You think that biologically, humans only need to eat, reproduce and go to the WC. Gender is just a social construction, shaped by the society and culture that we are all part of maintaining. You say that the solution to inequality is that men realise that they are the problem, and you then try to fix it. 
@@ -90,13 +90,10 @@ class Finished extends Component {
             <p>Jämställdhetsveckan starts the 16th April and finishes the 20th April. Check us, and our events, out and learn more about gender equality to either change your score or just for your enjoyment!</p>
             <p>Följ oss på: 
               <br/>
-            <a href="https://www.facebook.com/Jamstalldhetsveckan/">Facebook</a>
-            <br/>
-            <a href="http://instagram.com/jamstalldhetsveckan">Instagram</a>
-            <br/>
-            <a href="https://www.linkedin.com/company/10321330/">LinkedIn</a>
-            <br/>
-            <a href="http://www.jamstalldhetsveckan.se/">Jämställdhetsveckan.se</a>
+            <a href="https://www.facebook.com/Jamstalldhetsveckan/" style={{margin:"5px", fontSize:"12px"}}>Facebook</a>
+            <a href="http://instagram.com/jamstalldhetsveckan" style={{margin:"5px", fontSize:"12px"}}>Instagram</a>
+            <a href="https://www.linkedin.com/company/10321330/" style={{margin:"5px", fontSize:"12px"}}>LinkedIn</a>
+            <a href="http://www.jamstalldhetsveckan.se/" style={{margin:"5px", fontSize:"12px"}}>Jämställdhetsveckan.se</a>
             </p>
           </div>		
   		</div>
