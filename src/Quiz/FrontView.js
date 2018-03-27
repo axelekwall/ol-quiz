@@ -42,7 +42,12 @@ class FrontView extends Component {
           <img id="jsv-logga-bild" src="./static/logga-jsv.jpg"/>
           <h1>{this.props.quiz.name}</h1>
           <p>
-            {this.props.quiz.desc}
+            Welcome to this supercalifragilisticexpialidocious quiz made by Jämställdhetsveckan in 
+            collaboration with Osqledaren! 
+            <br/><br/>
+            Answer some quick questions and find out which feminist 
+            (or non-feminist) profile you are most similar to.But beware, we do not guarantee your 
+            satisfaction with the result...
           </p>
           <button className="start-button"onClick={e => {this.props.onClick()}}>Starta quiz</button>
         </div>
